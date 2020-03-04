@@ -98,7 +98,10 @@
             border: 20px solid rgba(241, 24, 24, 0.678);
         }
         .percentResult {
-            background-color: #000000d2;
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 10px #222);
+            background-color: #00000059;
+            width: 100%;
         }
         /* Countdown Style */
         .countdownHolder {
@@ -152,24 +155,30 @@
         <div class="resultHolder" id="resultHolder">
             <div class="resultOption">
                 <div class="resultOptionHolder answerOption1 resultFrame">
-                    <div class="percentResult">
+                    <div class="percentResult" style='height:95%;'>
 
                     </div>
                 </div>
             </div>
             <div class="resultOption">
                 <div class="resultOptionHolder answerOption2 resultGood">
+                    <div class="percentResult" style='height:75%;'>
 
+                    </div>
                 </div>
             </div>
             <div class="resultOption">
                 <div class="resultOptionHolder answerOption3 resultWrong">
+                    <div class="percentResult" style='height:70%;'>
 
+                    </div>
                 </div>
             </div>
             <div class="resultOption">
                 <div class="resultOptionHolder answerOption4 resultFrame">
+                    <div class="percentResult" style='height:60%;'>
 
+                    </div>
                 </div>
             </div>
         </div>
