@@ -126,14 +126,14 @@
     setInterval(function() {
         // Display the result in the element with id="demo"
         time--;
-        var countdownHolder = document.getElementById("countdownHolder");
-        var countdown = document.getElementById("countdownTime");
-        countdown.innerHTML = time + "s";
         if(time == 0)
         {
             console.log("time expired");
             window.open("pick_answer.html", "_self");
         }
+        var countdownHolder = document.getElementById("countdownHolder");
+        var countdown = document.getElementById("countdownTime");
+        countdown.innerHTML = time + "s";
 
     }, 1000);
 </script>
