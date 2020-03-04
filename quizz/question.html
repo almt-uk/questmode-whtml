@@ -71,6 +71,36 @@
             -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 10px #222);
         }
+        
+        /* Countdown Style */
+        .countdownHolder {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: rgb(21, 68, 199);
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 5px #222);
+            position: relative;
+            top: 10%;
+            left: 50%;
+            transform: perspective(1px) translateX(-50%);
+            z-index: 1;
+        }
+        .countdownTime {
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: perspective(1px) translateY(-50%);
+            font-family: 'PT Sans';
+            text-shadow: 0px 2px, 2px 0px, 2px 2px;
+            font-weight: 900;
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+
+        }
+        .countdownTimeOut {
+            background-color: rgb(241, 28, 67);
+        }
       
     </style>
   
