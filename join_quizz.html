@@ -189,6 +189,34 @@
             font-size: 18px;
             font-family: 'PT Sans';
         }
+        .quizzCodeBtn {
+            width: fit-content;
+            margin-top: 10px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            font-weight: 900;
+            font-size: 16px;
+            padding-left: 24px;
+            padding-right: 24px;
+            font-family: 'PT Sans';
+            color: rgb(29, 29, 29);
+            background-color: #dadada;
+            border-radius: 5px;
+            -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0px 0px 2px rgb(153, 153, 153));
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        .quizzCodeBtn:hover {
+            transform: translate(-50%, 0%) scale(0.95);
+            background-color: #c9c9c9;
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            box-shadow: inset 0 0 10px #00000083;
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0px 0px 5px rgb(102, 102, 102));
+            cursor: pointer;           
+        }
       
     </style>
   
@@ -221,6 +249,9 @@
               <input class="inputHolder" placeholder=" " type="text" required>
               <span>Code</span>
             </label>
+            <div class="quizzCodeBtn">
+                Join Quizz
+            </div>
         </div>
     </div>
 
