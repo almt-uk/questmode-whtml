@@ -171,24 +171,24 @@
             <div class="ananswersSubhlder">
                 <div class="rowAnswer">
                     <div class="answerHolder">
-                        <div class="answerContentHolder answerOption1" onclick="answer(1)">
+                        <div class="answerContentHolder answerOption1" id="answerOption1" onclick="answer(1)">
 
                         </div>
                     </div>
                     <div class="answerHolder">
-                        <div class="answerContentHolder answerOption2" onclick="answer(2)">
+                        <div class="answerContentHolder answerOption2" id="answerOption2" onclick="answer(2)">
 
                         </div>                        
                     </div>
                 </div>
                 <div class="rowAnswer">
                     <div class="answerHolder">
-                        <div class="answerContentHolder answerOption3" onclick="answer(3)">
+                        <div class="answerContentHolder answerOption3" id="answerOption3" onclick="answer(3)">
 
                         </div>
                     </div>
                     <div class="answerHolder">
-                        <div class="answerContentHolder answerOption4" onclick="answer(4)">
+                        <div class="answerContentHolder answerOption4" id="answerOption4" onclick="answer(4)">
 
                         </div>                        
                     </div>                  
@@ -205,6 +205,7 @@
 </body>
 <script>
     var time = 10;
+    var choice = 0;
     setInterval(function() {
         // Display the result in the element with id="demo"
         time--;
@@ -218,6 +219,19 @@
                 countdownHolder.classList.add("countdownTimeOut");
             }
         }
+        if(time == 0)
+        {
+            console.log(choice);
+        }
 
     }, 1000);
+
+    function answer(answer = 0)
+    {
+        var countdownHolder = document.getElementById("answerOption" + answer);
+        document.getElementsByClassName("answerOption1").disabled = true;
+        choice = answer;
+        console.log("ch: ", choice);
+        //window.open("quizz/waiting.html", "_self");
+    }
 </script>
