@@ -156,9 +156,15 @@
 
         /* Quizz PIN Holder */
         .quizzPinHolder {
-            width: 100px;
-            height: 100px;
-            background-color: #00b64c;
+            width: fit-content;
+            padding: 50px;
+            background-color: #e9e9e9;
+            margin-left: 50%;
+            margin-top: 100px;
+            border-radius: 10px;
+            -webkit-filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 3px #222);
+            transform: translate(-50%, 0%);
         }
       
     </style>
@@ -185,6 +191,9 @@
   
     <div class="contentHolder">
         <div class="quizzPinHolder">
+            <div class="quizzJoinTitle">
+                Enter Quizz Code
+            </div>
 
         </div>
     </div>
