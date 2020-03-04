@@ -104,6 +104,9 @@
             color: rgb(255, 255, 255);
 
         }
+        .countdownTimeOut {
+            color: rgb(233, 30, 30);
+        }
       
     </style>
   
@@ -114,7 +117,7 @@
         <div class="imageHolder">
             <img class="imageQuestion" src="https://i0.wp.com/uniserveducation.com/wp-content/uploads/2016/01/Northampton.jpg?fit=900%2C505&ssl=1" />
         </div>
-        <div class="answersHolder">
+        <div class="answersHolder unselectable">
             <div class="countdownHolder">
                 <div class="countdownTime" id="countdownTime">
                     10s
@@ -137,5 +140,13 @@
         time--;
         var countdown = document.getElementById("countdownTime");
         countdown.innerHTML = time + "s";
+        if(time <= 3)
+        {
+            if(!countdown.classList.contains("countdownTimeOut"))
+            {
+                time.classList.add("countdownTimeOut");
+            }
+        }
+
     }, 1000);
 </script>
