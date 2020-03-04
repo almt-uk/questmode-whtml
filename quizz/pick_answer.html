@@ -161,6 +161,16 @@
             cursor: pointer;
             transform: scale(0.95);
         }
+        .answerTextContent {
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: perspective(1px) translateY(-50%);
+            font-family: 'PT Sans';
+            font-weight: 900;
+            font-size: 30px;
+            color: rgba(0, 0, 0);
+        }
       
     </style>
   
@@ -181,24 +191,32 @@
                 <div class="rowAnswer">
                     <div class="answerHolder">
                         <div class="answerContentHolder answerOption1" id="answerOption1" onclick="answer(1)">
-
+                            <div class="answerTextContent">
+                                London
+                            </div>
                         </div>
                     </div>
                     <div class="answerHolder">
                         <div class="answerContentHolder answerOption2" id="answerOption2" onclick="answer(2)">
-
+                            <div class="answerTextContent">
+                                Northampton
+                            </div>
                         </div>                        
                     </div>
                 </div>
                 <div class="rowAnswer">
                     <div class="answerHolder">
                         <div class="answerContentHolder answerOption3" id="answerOption3" onclick="answer(3)">
-
+                            <div class="answerTextContent">
+                                Birmingham
+                            </div>
                         </div>
                     </div>
                     <div class="answerHolder">
                         <div class="answerContentHolder answerOption4" id="answerOption4" onclick="answer(4)">
-
+                            <div class="answerTextContent">
+                                Bexford
+                            </div>
                         </div>                        
                     </div>                  
                 </div>
