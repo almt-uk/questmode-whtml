@@ -263,8 +263,10 @@
 <script>
     $('#quizzCode').keyup(function (e) {
         if (e.keyCode === 13) {
-            console.log(document.getElementById("quizzCode").value);
-            //window.open("quizz.html", "_self");
+            if(document.getElementById("quizzCode").value.length != 0)
+            {
+                window.open("quizz.html", "_self");
+            }
         }
     });
 </script>
