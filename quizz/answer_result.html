@@ -103,6 +103,19 @@
             background-color: #00000059;
             width: 100%;
         }
+        .percentResultNo {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: perspective(1px) translateX(-50%);
+            font-family: 'PT Sans';
+            color: rgba(0, 0, 0, 0.5);
+            font-weight: 900;
+            font-size: 40px;
+            text-align: center;
+            text-shadow: 2px 0 rgba(0, 0, 0, 0.5);
+            letter-spacing: -2px;
+        }
         /* Countdown Style */
         .countdownHolder {
             width: 90px;
@@ -156,7 +169,9 @@
             <div class="resultOption">
                 <div class="resultOptionHolder answerOption1 resultFrame">
                     <div class="percentResult" style='height:95%;'>
-
+                    </div>
+                    <div class="percentResultNo">
+                        5%
                     </div>
                 </div>
             </div>
@@ -165,6 +180,9 @@
                     <div class="percentResult" style='height:75%;'>
 
                     </div>
+                    <div class="percentResultNo">
+                        25%
+                    </div>
                 </div>
             </div>
             <div class="resultOption">
@@ -172,12 +190,18 @@
                     <div class="percentResult" style='height:70%;'>
 
                     </div>
+                    <div class="percentResultNo">
+                        30%
+                    </div>
                 </div>
             </div>
             <div class="resultOption">
                 <div class="resultOptionHolder answerOption4 resultFrame">
                     <div class="percentResult" style='height:60%;'>
 
+                    </div>
+                    <div class="percentResultNo">
+                        40%
                     </div>
                 </div>
             </div>
