@@ -63,7 +63,7 @@
             position: relative;
             top: 50%;
             left: 50%;
-            padding-top: 20px;
+            padding-top: 40px;
             transform: perspective(1px) translateY(-60%) translateX(-50%);
             height: 70vh;
         }
@@ -87,7 +87,7 @@
             -webkit-box-shadow: inset 0 0 5px #000000;
             box-shadow: inset 0 0 5px #000000;
             border: 10px solid rgba(0, 0, 0, 0.418);
-            background-color: #00425cc4;
+            background-color: #05923a;
         }
         .percentResult {
             -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
@@ -98,15 +98,17 @@
         .percentResultNo {
             position: fixed;
             width: 100%;
-            top: 10px;
             left: 50%;
+            top: 2px;
             transform: perspective(1px) translateX(-50%);
             font-family: 'PT Sans';
-            color: rgba(0, 0, 0);
+            color: rgb(2, 53, 36);
             font-weight: 900;
             font-size: 40px;
             text-align: center;
-            text-shadow: 2px 0 rgba(0, 0, 0);
+            text-shadow: 2px 0 rgb(2, 53, 36);
+            -webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 2px #222);
             letter-spacing: 0px;
         }
         /* Countdown Style */
@@ -140,7 +142,7 @@
 </head>
 <body>
   
-    <div class="contentHolder">
+    <div class="contentHolder unselectable">
         <div class="resultHolder" id="resultHolder">
             <div class="resultOption">
                 <div class="resultOptionHolder resultFrame">
