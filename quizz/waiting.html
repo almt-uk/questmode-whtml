@@ -216,3 +216,14 @@
     </div>
       
 </body>
+<script>
+    setInterval(function()
+    {
+        var content = document.getElementById("quizzWaitingTitle").innerHTML;
+        if(content.substr(content.length - 3) == "...") {
+            document.getElementById("quizzWaitingTitle").innerHTML = content.substr(0, content.length - 3);
+        } else {
+            document.getElementById("quizzWaitingTitle").innerHTML += ".";
+        }
+    }, 1000);
+</script>
