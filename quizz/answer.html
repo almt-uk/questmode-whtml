@@ -53,31 +53,23 @@
 
         /* Website Content Holder */
         .contentHolder {
-            padding-top: 60px;
-            padding-bottom: 30px;
             width: 100%;
             height: 100%;
             position: absolute;
         }
 
-        /* Question Content */
-        .questionContent {
-            background-color: rgb(236, 236, 236);
-            text-align: center;
-            font-weight: 900;
-            font-size: 50px;
-            text-shadow: 0px 2px, 2px 0px, 2px 2px;
-            font-family: 'PT Sans';
-            color: rgb(0, 0, 0);
-            padding: 50px;
-            position: relative;
-            top: 50%;
-            transform: perspective(1px) translateY(-50%);
-            margin-left: 100px;
-            margin-right: 100px;
+        /* Answer Content */
+        /* Answer Image */
+        .imageHolder {
+            margin-left: 10%;
+            margin-right: 10%;
+            margin-top: 60px;
+        }
+        .imageQuestion {
+            height: 40%;
+            margin-left: 50%;
             border-radius: 50px;
-            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
-            filter: drop-shadow(0px 0px 10px #222);
+            transform: translate(-50%, 0%);
         }
       
     </style>
@@ -86,8 +78,8 @@
 <body>
   
     <div class="contentHolder">
-        <div class="questionContent">
-            How much do I have to pay you?How much do I have to pay you?How much do I have to pay you?How much do I have to pay you?
+        <div class="imageHolder">
+            <img class="imageQuestion" src="https://codropspz-tympanus.netdna-ssl.com/codrops/wp-content/uploads/2019/01/SVGFilters101_featured.jpg" />
         </div>
     </div>
 
