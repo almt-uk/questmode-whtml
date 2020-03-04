@@ -77,7 +77,7 @@
             width: 90px;
             height: 90px;
             border-radius: 50%;
-            background-color: rgb(21, 68, 199);
+            background-color: rgb(21, 199, 101);
             -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 5px #222);
             position: relative;
@@ -97,9 +97,6 @@
             font-size: 40px;
             color: rgb(255, 255, 255);
 
-        }
-        .countdownTimeOut {
-            background-color: rgb(241, 28, 67);
         }
       
     </style>
@@ -124,3 +121,20 @@
     </div>
       
 </body>
+<script>
+    var time = 6;
+    document.getElementById("countdownTime").innerHTML = time + "s";
+    setInterval(function() {
+        // Display the result in the element with id="demo"
+        time--;
+        var countdownHolder = document.getElementById("countdownHolder");
+        var countdown = document.getElementById("countdownTime");
+        countdown.innerHTML = time + "s";
+        if(time == 0)
+        {
+            console.log("time expired");
+            // window.open("quizz/answer_result.html", "_self");
+        }
+
+    }, 1000);
+</script>
