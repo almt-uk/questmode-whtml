@@ -142,9 +142,6 @@
             color: rgb(255, 255, 255);
 
         }
-        .countdownTimeOut {
-            background-color: rgb(241, 28, 67);
-        }
         /* Answers Subholder Style */
         .answerOption1 {
             background-color: #E91E63;
@@ -228,13 +225,6 @@
         var countdownHolder = document.getElementById("countdownHolder");
         var countdown = document.getElementById("countdownTime");
         countdown.innerHTML = time + "s";
-        if(time <= 3)
-        {
-            if(!countdownHolder.classList.contains("countdownTimeOut"))
-            {
-                countdownHolder.classList.add("countdownTimeOut");
-            }
-        }
         if(time == 0)
         {
             console.log("time expired");
