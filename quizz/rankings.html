@@ -63,39 +63,31 @@
             position: relative;
             top: 50%;
             left: 50%;
+            padding-top: 20px;
             transform: perspective(1px) translateY(-60%) translateX(-50%);
-            height: 60vh;
+            height: 70vh;
         }
         .resultOption {
-            float: left;
-            width: 25%;
-            height: 100%;
+            position: relative;
+            left: 50%;
+            transform: perspective(1px) translateX(-50%);
+            width: 50%;
+            height: 100px;
             padding: 10px;
         }
         .resultOptionHolder {
             height: 100%;
             width: 100%;
-            border-radius: 20px;
+            border-radius: 10px;
             -webkit-filter: drop-shadow(0px 0px 3px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 3px #222);
         }
         .resultFrame {
-            -moz-box-shadow: inset 0 0 10px #000000;
-            -webkit-box-shadow: inset 0 0 10px #000000;
-            box-shadow: inset 0 0 10px #000000;
-            border: 20px solid rgba(0, 0, 0, 0.418);
-        }
-        .resultGood {
-            -moz-box-shadow: inset 0 0 10px #000000;
-            -webkit-box-shadow: inset 0 0 10px #000000;
-            box-shadow: inset 0 0 10px #000000;
-            border: 20px solid rgba(1, 245, 74, 0.829);
-        }
-        .resultWrong {
-            -moz-box-shadow: inset 0 0 10px #000000;
-            -webkit-box-shadow: inset 0 0 10px #000000;
-            box-shadow: inset 0 0 10px #000000;
-            border: 20px solid rgba(241, 24, 24, 0.8);
+            -moz-box-shadow: inset 0 0 5px #000000;
+            -webkit-box-shadow: inset 0 0 5px #000000;
+            box-shadow: inset 0 0 5px #000000;
+            border: 10px solid rgba(0, 0, 0, 0.418);
+            background-color: #00425cc4;
         }
         .percentResult {
             -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
@@ -105,16 +97,17 @@
         }
         .percentResultNo {
             position: fixed;
+            width: 100%;
             top: 10px;
             left: 50%;
             transform: perspective(1px) translateX(-50%);
             font-family: 'PT Sans';
-            color: rgba(0, 0, 0, 0.5);
+            color: rgba(0, 0, 0);
             font-weight: 900;
             font-size: 40px;
             text-align: center;
-            text-shadow: 2px 0 rgba(0, 0, 0, 0.5);
-            letter-spacing: -2px;
+            text-shadow: 2px 0 rgba(0, 0, 0);
+            letter-spacing: 0px;
         }
         /* Countdown Style */
         .countdownHolder {
@@ -125,7 +118,7 @@
             -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 5px #222);
             position: relative;
-            top: 10%;
+            top: 20px;
             left: 50%;
             transform: perspective(1px) translateX(-50%);
             z-index: 1;
@@ -140,20 +133,6 @@
             font-weight: 900;
             font-size: 40px;
             color: rgb(255, 255, 255);
-
-        }
-        /* Answers Subholder Style */
-        .answerOption1 {
-            background-color: #E91E63;
-        }
-        .answerOption2 {
-            background-color: #9C27B0;
-        }
-        .answerOption3 {
-            background-color: #3F51B5;
-        }
-        .answerOption4 {
-            background-color: #FF9800;
         }
       
     </style>
@@ -164,49 +143,45 @@
     <div class="contentHolder">
         <div class="resultHolder" id="resultHolder">
             <div class="resultOption">
-                <div class="resultOptionHolder answerOption1 resultFrame">
-                    <div class="percentResult" style='height:95%;'>
-                    </div>
+                <div class="resultOptionHolder resultFrame">
                     <div class="percentResultNo">
-                        5%
+                        1. Name 134657
                     </div>
                 </div>
             </div>
             <div class="resultOption">
-                <div class="resultOptionHolder answerOption2 resultFrame">
-                    <div class="percentResult" style='height:75%;'>
-
-                    </div>
+                <div class="resultOptionHolder resultFrame">
                     <div class="percentResultNo">
-                        25%
+                        2. Name 21212124
                     </div>
                 </div>
             </div>
             <div class="resultOption">
-                <div class="resultOptionHolder answerOption3 resultFrame">
-                    <div class="percentResult" style='height:70%;'>
-
-                    </div>
+                <div class="resultOptionHolder resultFrame">
                     <div class="percentResultNo">
-                        30%
+                        3. Name 534637
                     </div>
                 </div>
             </div>
             <div class="resultOption">
-                <div class="resultOptionHolder answerOption4 resultFrame">
-                    <div class="percentResult" style='height:60%;'>
-
-                    </div>
+                <div class="resultOptionHolder resultFrame">
                     <div class="percentResultNo">
-                        40%
+                        4. Name 23537645
+                    </div>
+                </div>
+            </div>
+            <div class="resultOption">
+                <div class="resultOptionHolder resultFrame">
+                    <div class="percentResultNo">
+                        5. Name 32676
                     </div>
                 </div>
             </div>
         </div>
-        <div class="countdownHolder" id="countdownHolder">
-            <div class="countdownTime" id="countdownTime">
-                
-            </div>
+    </div>
+    <div class="countdownHolder" id="countdownHolder">
+        <div class="countdownTime" id="countdownTime">
+            
         </div>
     </div>
 
