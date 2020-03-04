@@ -174,7 +174,7 @@
         <div class="cuntentSubholder unselectable">
             <div class="countdownHolder" id="countdownHolder">
                 <div class="countdownTime" id="countdownTime">
-                    10s
+                    
                 </div>
             </div>
             <div class="ananswersSubhlder">
@@ -213,8 +213,9 @@
       
 </body>
 <script>
-    var time = 10;
+    var time = 12;
     var choice = 0;
+    document.getElementById("countdownHolder").innerHTML = time + "s";
     setInterval(function() {
         // Display the result in the element with id="demo"
         time--;
