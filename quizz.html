@@ -161,7 +161,7 @@
         }
 
         /* Quizz PIN Holder */
-        .quizzCodeHolder {
+        .quizzWaitingHolder {
             width: fit-content;
             padding: 20px;
             padding-left: 30px;
@@ -174,45 +174,12 @@
             filter: drop-shadow(0px 0px 3px #222);
             transform: translate(-50%, 0%);
         }
-        .quizzCodeTitle {
+        .quizzWaitingTitle {
             text-align: center;
             font-weight: 900;
             font-size: 18px;
             font-family: 'PT Sans';
             color: rgb(0, 0, 0);
-        }
-        .codeHolder {
-            margin-top: 10px;
-        }
-        .inputHolder {
-            font-weight: 900;
-            font-size: 18px;
-            font-family: 'PT Sans';
-        }
-        .quizzCodeBtn {
-            width: fit-content;
-            margin-top: 10px;
-            padding-top: 6px;
-            padding-bottom: 6px;
-            font-weight: 900;
-            font-size: 16px;
-            padding-left: 24px;
-            padding-right: 24px;
-            font-family: 'PT Sans';
-            color: rgb(29, 29, 29);
-            background-color: #e6e6e6;
-            border-radius: 5px;
-            -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
-            filter: drop-shadow(0px 0px 2px rgb(153, 153, 153));
-            margin-left: 50%;
-            transform: translate(-50%, 0%);
-        }
-        .quizzCodeBtn:hover {
-            transform: translate(-50%, 0%) scale(0.95);
-            background-color: #dddddd;
-            -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
-            filter: drop-shadow(0px 0px 5px rgb(102, 102, 102));
-            cursor: pointer;           
         }
       
     </style>
@@ -238,17 +205,8 @@
     </div>
   
     <div class="contentHolder">
-        <div class="quizzCodeHolder">
-            <div class="quizzCodeTitle">
-                Enter Quizz Code
-            </div>
-            <label class="pure-material-textfield-outlined codeHolder">
-              <input class="inputHolder" placeholder=" " type="text" required>
-              <span>Code</span>
-            </label>
-            <div class="quizzCodeBtn">
-                Join Quizz
-            </div>
+        <div class="quizzWaitingHolder">
+            <div class="quizzWaitingTitle" id="quizzWaitingTitle">Waiting for others...</div>
         </div>
     </div>
 
@@ -258,3 +216,14 @@
     </div>
       
 </body>
+<script>
+    setInterval(function()
+    {
+        var content = document.getElementById("quizzWaitingTitle").innerHTML;
+        if(content.substr(content.length - 3) == "...") {
+            document.getElementById("quizzWaitingTitle").innerHTML = content.substr(0, content.length - 3);
+        } else {
+            document.getElementById("quizzWaitingTitle").innerHTML += ".";
+        }
+    }, 1000);
+</script>
