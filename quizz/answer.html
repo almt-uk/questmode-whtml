@@ -69,7 +69,7 @@
             border: 10px solid rgb(34, 34, 34);
         }
         /* Answers Style */
-        .answersHolder {
+        .cuntentSubholder {
             margin-top: 5vh;
             margin-bottom: 5vh;
             margin-left: 10%;
@@ -92,6 +92,7 @@
             top: 50%;
             left: 50%;
             transform: perspective(1px) translateY(-50%) translateX(-50%);
+            z-index: 1;
         }
         .countdownTime {
             text-align: center;
@@ -108,6 +109,20 @@
         .countdownTimeOut {
             background-color: rgb(241, 28, 67);
         }
+        /* Answers Subholder Style */
+        .ananswersSubhlder {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: aquamarine;
+            padding: 20px;
+        }
+        .rowAnswer {
+            height: 50%;
+            width: 100%;
+            background-color: #222;
+        }
       
     </style>
   
@@ -118,13 +133,20 @@
         <div class="imageHolder">
             <img class="imageQuestion" src="https://i0.wp.com/uniserveducation.com/wp-content/uploads/2016/01/Northampton.jpg?fit=900%2C505&ssl=1" />
         </div>
-        <div class="answersHolder unselectable">
+        <div class="cuntentSubholder unselectable">
             <div class="countdownHolder" id="countdownHolder">
                 <div class="countdownTime" id="countdownTime">
                     10s
                 </div>
             </div>
-
+            <div class="ananswersSubhlder">
+                <div class="rowAnswer">
+                    <div class="answerHolder"
+                </div>
+                <div class="rowAnswer">
+                    
+                </div>
+            </div>
         </div>
     </div>
 
