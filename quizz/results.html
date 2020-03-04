@@ -131,9 +131,9 @@
             top: 50%;
             transform: perspective(1px) translateY(-50%);
             font-family: 'PT Sans';
-            text-shadow: 0px 2px, 2px 0px, 2px 2px;
+            text-shadow: 0px 1px, 1px 0px, 1px 1px;
             font-weight: 900;
-            font-size: 40px;
+            font-size: 34px;
             color: rgb(255, 255, 255);
         }
       
@@ -181,9 +181,9 @@
             </div>
         </div>
     </div>
-    <div class="countdownHolder" id="countdownHolder">
+    <div class="countdownHolder unselectable" id="countdownHolder">
         <div class="countdownTime" id="countdownTime">
-            
+            Done
         </div>
     </div>
 
@@ -193,19 +193,3 @@
     </div>
       
 </body>
-<script>
-    var time = 5;
-    document.getElementById("countdownTime").innerHTML = time + "s";
-    setInterval(function() {
-        // Display the result in the element with id="demo"
-        time--;
-        if(time == 0)
-        {
-            window.open("answer_result.html", "_self");
-        }
-        var countdownHolder = document.getElementById("countdownHolder");
-        var countdown = document.getElementById("countdownTime");
-        countdown.innerHTML = time + "s";
-
-    }, 1000);
-</script>
