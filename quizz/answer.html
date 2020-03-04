@@ -86,8 +86,8 @@
             height: 90px;
             border-radius: 50%;
             background-color: rgb(21, 68, 199);
-            -webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
-            filter: drop-shadow(0px 0px 2px #222);
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 5px #222);
             position: relative;
             top: 50%;
             left: 50%;
@@ -127,13 +127,15 @@
             float: left;
             padding: 10px;
         }
+        .answerContentHolder {
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            -webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 2px #222);
+        }
         .answerOption1 {
             background-color: rgb(43, 250, 188);
-        }
-        .answerOption1:hover {
-            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
-            filter: drop-shadow(0px 0px 10px #222);
-            cursor: pointer;       
         }
         .answerOption2 {
             background-color: rgb(32, 116, 243);
@@ -144,12 +146,10 @@
         .answerOption4 {
             background-color: rgb(235, 36, 112);
         }
-        .answerContentHolder {
-            width: 100%;
-            height: 100%;
-            border-radius: 20px;
-            -webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
-            filter: drop-shadow(0px 0px 2px #222);
+        .answerOption1:hover, .answerOption2:hover, .answerOption3:hover, .answerOption4:hover {
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 10px #222);
+            cursor: pointer;
         }
       
     </style>
