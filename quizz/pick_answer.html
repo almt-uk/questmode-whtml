@@ -219,6 +219,8 @@
     setInterval(function() {
         // Display the result in the element with id="demo"
         time--;
+        var countdownHolder = document.getElementById("countdownHolder");
+        var countdown = document.getElementById("countdownTime");
         if(time <= 3)
         {
             if(!countdownHolder.classList.contains("countdownTimeOut"))
@@ -230,8 +232,6 @@
         {
             window.open("answer_result.html", "_self");
         }
-        var countdownHolder = document.getElementById("countdownHolder");
-        var countdown = document.getElementById("countdownTime");
         countdown.innerHTML = time + "s";
 
     }, 1000);
