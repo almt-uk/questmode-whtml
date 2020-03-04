@@ -166,7 +166,7 @@
             padding: 20px;
             padding-left: 30px;
             padding-right: 30px;
-            background-color: #e9e9e9;
+            background-color: #f1f1f1;
             margin-left: 50%;
             margin-top: 100px;
             border-radius: 10px;
@@ -200,7 +200,7 @@
             padding-right: 24px;
             font-family: 'PT Sans';
             color: rgb(29, 29, 29);
-            background-color: #dadada;
+            background-color: #e6e6e6;
             border-radius: 5px;
             -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
             filter: drop-shadow(0px 0px 2px rgb(153, 153, 153));
@@ -209,7 +209,7 @@
         }
         .quizzCodeBtn:hover {
             transform: translate(-50%, 0%) scale(0.95);
-            background-color: #c9c9c9;
+            background-color: #dddddd;
             -webkit-filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.5));
             filter: drop-shadow(0px 0px 5px rgb(102, 102, 102));
             cursor: pointer;           
@@ -243,12 +243,14 @@
                 Enter Quizz Code
             </div>
             <label class="pure-material-textfield-outlined codeHolder">
-              <input class="inputHolder" placeholder=" " type="text" required>
+              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
               <span>Code</span>
             </label>
-            <div class="quizzCodeBtn">
-                Join Quizz
-            </div>
+            <a href="quizz.html">
+                <div class="quizzCodeBtn">
+                    Join Quizz
+                </div>
+            </a>
         </div>
     </div>
 
@@ -258,3 +260,11 @@
     </div>
       
 </body>
+<script>
+    $('#quizzCode').keyup(function (e) {
+        if (e.keyCode === 13) {
+            console.log(document.getElementById("quizzCode").value);
+            //window.open("quizz.html", "_self");
+        }
+    });
+</script>
