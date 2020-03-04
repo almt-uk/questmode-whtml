@@ -56,25 +56,6 @@
         }
 
         /* Answer Content Style */
-        /* Result Style */
-        .resultHolder {
-            margin-left: 10%;
-            margin-right: 10%;
-            margin-top: 5vh;
-            height: 40vh;
-        }
-        .resultOption {
-            float: left;
-            width: 25%;
-            height: 100%;
-            background-color: #9C27B0;
-            padding: 10px;
-        }
-        .resultOptionHolder {
-            height: 100%;
-            width: 100%;
-            background-color: rgb(102, 2, 119);
-        }        
         /* Answer Image Style */
         .imageHolder {
             margin-left: 10%;
@@ -190,28 +171,6 @@
         <div class="imageHolder" id="imageHolder">
             <img class="imageQuestion" src="https://i0.wp.com/uniserveducation.com/wp-content/uploads/2016/01/Northampton.jpg?fit=900%2C505&ssl=1" />
         </div>
-        <div class="resultHolder hideElement" id="resultHolder">
-            <div class="resultOption">
-                <div class="resultOptionHolder">
-
-                </div>
-            </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder">
-
-                </div>
-            </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder">
-
-                </div>
-            </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder">
-
-                </div>
-            </div>
-        </div>
         <div class="cuntentSubholder unselectable">
             <div class="countdownHolder" id="countdownHolder">
                 <div class="countdownTime" id="countdownTime">
@@ -271,9 +230,7 @@
         }
         if(time == 0)
         {
-            document.getElementById("imageHolder").classList.add("hideElement");
-            document.getElementById("resultHolder").classList.remove("hideElement");
-            window.open("quizz/answer_result.html", "_self");
+            window.open("answer_result.html", "_self");
         }
 
     }, 1000);
