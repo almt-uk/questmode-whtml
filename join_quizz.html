@@ -265,6 +265,7 @@
         if (e.keyCode === 13) {
             if(document.getElementById("quizzCode").value.length != 0)
             {
+                document.getElementById("quizzCode").value = "";
                 window.open("quizz.html", "_self");
             }
         }
