@@ -23,6 +23,11 @@
     <script src="../assets/script/cookieConsent.js" type="text/javascript"></script>
   
     <style>
+        /* colors */
+        :root {
+          --pure-material-primary-rgb: 85, 8, 194;
+          --pure-material-onsurface-rgb: 0, 0, 0;
+        }
 
         /* Body Style */
         body {
@@ -390,6 +395,75 @@
         .studentStatsHolder {
             width: 100%;
         }
+        
+        /* Question Content Style */
+        .quizzCodeHolder {
+            background-color: rgb(236, 236, 236);
+            font-family: 'PT Sans';
+            color: rgb(0, 0, 0);
+            padding: 30px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            border-radius: 20px;
+            -webkit-filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 1px #222);
+        }
+
+        .quizzCodeTitle {
+            text-align: center;
+            font-weight: 900;
+            font-size: 25px;
+            font-family: 'PT Sans';
+            color: rgb(0, 0, 0);
+        }
+        .codeHolder {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 17px;
+            color: rgb(0, 0, 0);
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .inputHolder {
+            font-weight: 900;
+            font-size: 18px;
+            font-family: 'PT Sans';
+        }
+        .quizzCodeBtn {
+            width: fit-content;
+            margin-top: 15px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            font-weight: 900;
+            font-size: 16px;
+            padding-left: 24px;
+            padding-right: 24px;
+            font-family: 'PT Sans';
+            color: rgb(255, 255, 255);
+            background-color: #2b00a0;
+            border-radius: 5px;
+            background-color: #2b00a0;
+            -webkit-filter: drop-shadow(0px 0px 4px #2b00a0c0);
+            filter: drop-shadow(0px 0px 4px #2b00a0be);
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            box-shadow: inset 0 0 10px #00000083;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        .quizzCodeBtn:hover {
+            transform: translate(-50%, 0%) scale(0.95);
+            background-color: #3b00df;
+            -webkit-filter: drop-shadow(0px 0px 6px #1a008dc0);
+            filter: drop-shadow(0px 0px 6px #1a008dbe);
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            cursor: pointer;           
+        }
       
     </style>
   
@@ -584,12 +658,16 @@
                         </div>
                     </div>
                     <div class="addStudentHolder hideElement" id="addStudentHolder">
-                        <div class="classDetails">
-                            <div class="classTitle">
-                                Add Student
+                        <div class="quizzCodeHolder">
+                            <div class="quizzCodeTitle">
+                                Enter Student ID or Username
                             </div>
-                            <div class="classNoStudents">
-                                LVL 123
+                            <label class="pure-material-textfield-outlined codeHolder">
+                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <span>ID or Username</span>
+                            </label>
+                            <div class="quizzCodeBtn" onclick="addStudentJS()">
+                                Add to Class
                             </div>
                         </div>
                     </div>
@@ -644,13 +722,26 @@
         {
             classStatsHolder.classList.add("hideElement");
         }
-        if(!addStudentHolder.classList.contains("hideElement"))
+        if(addStudentHolder.classList.contains("hideElement"))
         {
-            addStudentHolder.classList.add("hideElement");
+            addStudentHolder.classList.remove("hideElement");
         }
-        if(studentStatsHolder.classList.contains("hideElement"))
+        if(!studentStatsHolder.classList.contains("hideElement"))
         {
-            studentStatsHolder.classList.remove("hideElement");
+            studentStatsHolder.classList.add("hideElement");
         }
     }
+    function addStudentJS()
+    {
+        if(document.getElementById("quizzCode").value.length != 0)
+        {
+            alert(document.getElementById("quizzCode").value);
+            document.getElementById("quizzCode").value = "";
+        }
+    }
+    $('#quizzCode').keyup(function (e) {
+        if (e.keyCode === 13) {
+            addStudentJS();
+        }
+    });
 </script>
