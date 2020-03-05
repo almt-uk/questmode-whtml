@@ -521,7 +521,7 @@
             </div>
             <div class="rightHolder unselectable">
                 <div class="rightSubolder">
-                    <div class="classStatsHolder">
+                    <div class="classStatsHolder" id="classStatsHolder">
                         <div class="classDetails">
                             <div class="classTitle">
                                 Databses 1
@@ -545,10 +545,18 @@
 <script>
     function classStats()
     {
-        console.log("here");
+        var classStatsHolder = document.getElementById("classStatsHolder");
+        if(classStatsHolder.classList.contains("hideElement"))
+        {
+            classStatsHolder.classList.remove("hideElement");
+        }
     }
     function studentStats(studentId = 0)
     {
-        console.log(studentId);
+        var classStatsHolder = document.getElementById("classStatsHolder");
+        if(!classStatsHolder.classList.contains("hideElement"))
+        {
+            classStatsHolder.classList.add("hideElement");
+        }
     }
 </script>
