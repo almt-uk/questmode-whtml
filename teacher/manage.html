@@ -200,13 +200,20 @@
         .quizzJoinTitle {
             text-align: center;
             font-weight: 900;
-            font-size: 18px;
+            font-size: 20px;
             font-family: 'PT Sans';
             color: rgb(0, 0, 0);
         }
+        .quizzCreateContent {
+            padding-top: 10px;
+            font-size: 18px;
+            font-family: 'PT Sans';
+            color: rgb(0, 0, 0);
+            text-align: center;
+        }
         .quizzJoinSubtitle {
             padding-top: 10px;
-            font-size: 16px;
+            font-size: 18px;
             font-family: 'PT Sans';
             color: rgb(0, 0, 0);
         }
@@ -373,6 +380,18 @@
             </div>
             <div class="rightHolder unselectable">
                 <div class="rightSubolder">
+
+                    <div class="quizzJoinHolder">
+                        <div class="quizzJoinTitle">
+                            Create Quizz
+                        </div>
+                        <div class="quizzCreateContent">
+                            Do you want to create a new quizz?
+                        </div>
+                        <div class="quizzJoinBtn" onclick="window.open('../quizz/create.html', '_self');">
+                            Create
+                        </div>
+                    </div>
                                         
                 </div>          
             </div>
