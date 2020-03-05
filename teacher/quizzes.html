@@ -1,0 +1,122 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Log In to your ZeoFlow Account.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quest Mode</title>
+  
+    <!-- Disable tap highlight on IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+  
+    <!-- Web Application Manifest -->
+    <link rel="manifest" href="manifest.json">
+  
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="ZeoFlow">
+    <meta name="theme-color" content="#ffffff">
+  
+    <link href="https://fonts.googleapis.com/css?family=PT+Sans&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="../assets/style/cookieConsent.css" type="text/css">
+    <link rel="stylesheet" href="../assets/style/material.css" type="text/css">
+    <script src="../assets/script/cookieConsent.js" type="text/javascript"></script>
+  
+    <style>        
+        /* Body Style Style */
+        body {
+            margin: 0;
+            background-color: #f5f5f5;
+        }
+        .unselectable {
+          -webkit-user-select: none; /* Safari */        
+          -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* IE10+/Edge */
+          user-select: none; /* Standard */
+        }
+        a {
+            text-decoration:none
+        }
+
+        /* Prevent Resizing on Padding Style */
+        * { 
+            -moz-box-sizing: border-box; 
+            -webkit-box-sizing: border-box; 
+            box-sizing: border-box; 
+        }
+
+        /* Website Content Holder Style */
+        .contentHolder {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        /* Question Content Style */
+        .questionContent {
+            background-color: rgb(236, 236, 236);
+            text-align: center;
+            font-weight: 900;
+            font-size: 50px;
+            text-shadow: 0px 2px, 2px 0px, 2px 2px;
+            font-family: 'PT Sans';
+            color: rgb(0, 0, 0);
+            padding: 50px;
+            position: relative;
+            top: 50%;
+            transform: perspective(1px) translateY(-50%);
+            margin-left: 100px;
+            margin-right: 100px;
+            border-radius: 50px;
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 10px #222);
+        }
+
+        /* Countdown Style */
+        .countdownHolder {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            background-color: rgb(0, 0, 0);
+            -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 5px #222);
+            position: relative;
+            left: 50%;
+            top: 30px;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+        .countdownTime {
+            text-align: center;
+            position: relative;
+            top: 50%;
+            transform: perspective(1px) translateY(-50%);
+            font-family: 'PT Sans';
+            text-shadow: 0px 2px, 2px 0px, 2px 2px;
+            font-weight: 900;
+            font-size: 40px;
+            color: rgb(255, 255, 255);
+        }
+      
+    </style>
+  
+</head>
+<body>
+  
+    <div class="contentHolder unselectable">
+        <div class="questionContent">
+            Where is the University of Northampton located?
+        </div>
+    </div>
+    <div class="countdownHolder unselectable" id="countdownHolder">
+        <div class="countdownTime" id="countdownTime">
+            
+        </div>
+    </div>
+
+    <div id="myCookieConsent">
+        <a id="cookieButton">Understood</a>
+        <div>To help personalise content and provide a safer experience, we use cookies. By clicking on or navigating the site, you agree to allow us to collect information on and off Quest Mode through cookies. Learn more, including about available controls: <a href="/">Cookie Policy</a>.</div>
+    </div>
+      
+</body>
