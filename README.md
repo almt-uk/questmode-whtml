@@ -29,3 +29,18 @@ https://almt-uk.github.io/questmode-whtml/quizz/rankings.html
 <br>
 *results*
 https://almt-uk.github.io/questmode-whtml/quizz/results.html
+<br>
+*create class*
+https://almt-uk.github.io/questmode-whtml/classes/create.html
+<br>
+*view class*
+https://almt-uk.github.io/questmode-whtml/classes/view.html
+<br>
+*create quizz*
+https://almt-uk.github.io/questmode-whtml/quizz/create.html
+<br>
+*logged in home pafe*
+https://almt-uk.github.io/questmode-whtml/index2.html
+<br>
+*manage as teacher*
+https://almt-uk.github.io/questmode-whtml/teacher/manage.html
