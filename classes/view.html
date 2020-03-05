@@ -351,6 +351,11 @@
             font-family: 'PT Sans';
             text-align: center;
         }
+
+        /* Student Stats Holder */
+        .studentStatsHolder {
+            width: 100%;
+        }
       
     </style>
   
@@ -531,6 +536,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="studentStatsHolder hideElement" id="studentStatsHolder">
+                        <div class="classDetails">
+                            <div class="classTitle">
+                                NAme 253657
+                            </div>
+                            <div class="classNoStudents">
+                                LVL 123
+                            </div>
+                        </div>
+                    </div>
                 </div>          
             </div>
         </div>
@@ -550,6 +565,11 @@
         {
             classStatsHolder.classList.remove("hideElement");
         }
+        var studentStatsHolder = document.getElementById("studentStatsHolder");
+        if(!studentStatsHolder.classList.contains("hideElement"))
+        {
+            studentStatsHolder.classList.add("hideElement");
+        }
     }
     function studentStats(studentId = 0)
     {
@@ -557,6 +577,11 @@
         if(!classStatsHolder.classList.contains("hideElement"))
         {
             classStatsHolder.classList.add("hideElement");
+        }
+        var studentStatsHolder = document.getElementById("studentStatsHolder");
+        if(studentStatsHolder.classList.contains("hideElement"))
+        {
+            studentStatsHolder.classList.remove("hideElement");
         }
     }
 </script>
