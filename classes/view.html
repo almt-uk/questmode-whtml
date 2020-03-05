@@ -294,6 +294,40 @@
             color: rgb(0, 0, 0);
         }
 
+        /* Add Student Btn Style */
+        .addStudentBtn {
+            width: fit-content;
+            margin-top: 10px;
+            margin-bottom: 14px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            font-weight: 900;
+            font-size: 16px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-family: 'PT Sans';
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            background-color: #1a008d;
+            -webkit-filter: drop-shadow(0px 0px 4px #1a008dc0);
+            filter: drop-shadow(0px 0px 4px #1a008dbe);
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            box-shadow: inset 0 0 10px #00000083;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        .addStudentBtn:hover {
+            transform: translate(-50%, 0%) scale(0.95);
+            background-color: #3b00df;
+            -webkit-filter: drop-shadow(0px 0px 6px #1a008dc0);
+            filter: drop-shadow(0px 0px 6px #1a008dbe);
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            box-shadow: inset 0 0 10px #00000083;
+            cursor: pointer;         
+        }
+
         /* Classes Holder Style */
         .studentsHolder {
             width: 100%;
@@ -400,6 +434,9 @@
                     <div class="quizzJoinHolder">
                         <div class="quizzJoinTitle">
                             Students
+                        </div>
+                        <div class="addStudentBtn" onclick="addStudent()">
+                            Add Student
                         </div>
                         <div class="studentsHolder" onclick="studentStats(12)">
                             <div class="studentName">
@@ -546,6 +583,16 @@
                             </div>
                         </div>
                     </div>
+                    <div class="addStudentHolder hideElement" id="addStudentHolder">
+                        <div class="classDetails">
+                            <div class="classTitle">
+                                Add Student
+                            </div>
+                            <div class="classNoStudents">
+                                LVL 123
+                            </div>
+                        </div>
+                    </div>
                 </div>          
             </div>
         </div>
@@ -558,14 +605,19 @@
       
 </body>
 <script>
+    var classStatsHolder = document.getElementById("classStatsHolder");
+    var studentStatsHolder = document.getElementById("studentStatsHolder");
+    var addStudentHolder = document.getElementById("addStudentHolder");
     function classStats()
     {
-        var classStatsHolder = document.getElementById("classStatsHolder");
         if(classStatsHolder.classList.contains("hideElement"))
         {
             classStatsHolder.classList.remove("hideElement");
         }
-        var studentStatsHolder = document.getElementById("studentStatsHolder");
+        if(!addStudentHolder.classList.contains("hideElement"))
+        {
+            addStudentHolder.classList.add("hideElement");
+        }
         if(!studentStatsHolder.classList.contains("hideElement"))
         {
             studentStatsHolder.classList.add("hideElement");
@@ -573,12 +625,29 @@
     }
     function studentStats(studentId = 0)
     {
-        var classStatsHolder = document.getElementById("classStatsHolder");
         if(!classStatsHolder.classList.contains("hideElement"))
         {
             classStatsHolder.classList.add("hideElement");
         }
-        var studentStatsHolder = document.getElementById("studentStatsHolder");
+        if(!addStudentHolder.classList.contains("hideElement"))
+        {
+            addStudentHolder.classList.add("hideElement");
+        }
+        if(studentStatsHolder.classList.contains("hideElement"))
+        {
+            studentStatsHolder.classList.remove("hideElement");
+        }
+    }
+    function addStudent()
+    {
+        if(!classStatsHolder.classList.contains("hideElement"))
+        {
+            classStatsHolder.classList.add("hideElement");
+        }
+        if(!addStudentHolder.classList.contains("hideElement"))
+        {
+            addStudentHolder.classList.add("hideElement");
+        }
         if(studentStatsHolder.classList.contains("hideElement"))
         {
             studentStatsHolder.classList.remove("hideElement");
