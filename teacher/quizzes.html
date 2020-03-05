@@ -242,6 +242,39 @@
             box-shadow: inset 0 0 10px #00000083;
             cursor: pointer;         
         }
+
+        /* Classes Holder Style */
+        .classesHolder {
+            width: 100%;
+            padding: 20px;
+            margin-top: 10px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            background-color: #ebebeb;
+            border-radius: 10px;
+            -webkit-filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0px 0px 1px rgb(92, 92, 92));
+        }
+        .classTitle {
+            font-size: 16px;
+            padding-left: 10px;
+            font-weight: 900;
+            font-family: 'PT Sans';
+            color: rgb(0, 0, 0);
+
+        }
+        .classPeopleNo {
+            font-size: 18px;
+            font-family: 'PT Sans';
+            color: rgb(0, 0, 0);
+            padding-top: 4px;
+        }
+        .classesHolder:hover {
+            cursor: pointer;
+            transform: scale(0.96);
+            -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0px 0px 4px rgb(92, 92, 92));
+        }
       
     </style>
   
@@ -264,43 +297,74 @@
         </div>
     </div>
   
-    <div class="contentHolder">
+    <div class="contentHolder unselectable">
         <div class="contentSubholder">
             <div class="leftHolder">
                 <div class="leftSubolder">
 
                     <div class="quizzJoinHolder">
                         <div class="quizzJoinTitle">
-                            Join Quizz
+                            Create Class
                         </div>
                         <div class="quizzJoinSubtitle">
-                            In case that you have a quizz code from your teacher, join it faster - no registration needed!
+                            Do you want to create a new class?
                         </div>
-                        <a href="join_quizz.html">
-                            <div class="quizzJoinBtn">
-                                Join
-                            </div>
-                        </a>
+                        <div class="quizzJoinBtn" onclick="window.open('class_create.html', '_self');">
+                            Create
+                        </div>
                     </div>
 
                     <div class="quizzJoinHolder">
                         <div class="quizzJoinTitle">
-                            University Rankings per Year
+                            Classes
                         </div>
-                        <div class="quizzJoinSubtitle">
-                            1. Name 14355 (LVL 54)
+                        <div class="classesHolder">
+                            <div class="classTitle">
+                                Databases 1
+                            </div>
+                            <div class="classPeopleNo">
+                                23 students
+                            </div>
                         </div>
-                        <div class="quizzJoinSubtitle">
-                            2. Name 14355 (LVL 52)
+                        <div class="classesHolder">
+                            <div class="classTitle">
+                                Game Techniques 1
+                            </div>
+                            <div class="classPeopleNo">
+                                10 students
+                            </div>
                         </div>
-                        <div class="quizzJoinSubtitle">
-                            3. Name 14355 (LVL 23)
+                        <div class="classesHolder">
+                            <div class="classTitle">
+                                Fundamentals of Computing System
+                            </div>
+                            <div class="classPeopleNo">
+                                43 students
+                            </div>
                         </div>
-                        <div class="quizzJoinSubtitle">
-                            ...
+                        <div class="classesHolder">
+                            <div class="classTitle">
+                                Problem Solving and Programming
+                            </div>
+                            <div class="classPeopleNo">
+                                32 students
+                            </div>
                         </div>
-                        <div class="quizzJoinSubtitle">
-                            47. Name 143474575 (LVL 14)
+                        <div class="classesHolder">
+                            <div class="classTitle">
+                                Video Games Architectures and Optimisation
+                            </div>
+                            <div class="classPeopleNo">
+                                43 students
+                            </div>
+                        </div>
+                        <div class="classesHolder">
+                            <div class="classTitle">
+                                (BSc) Games Programming
+                            </div>
+                            <div class="classPeopleNo">
+                                43 students
+                            </div>
                         </div>
                     </div>
                 </div>
