@@ -23,6 +23,7 @@
     <script src="../assets/script/cookieConsent.js" type="text/javascript"></script>
   
     <style>
+
         /* Body Style */
         body {
             margin: 0;
@@ -183,13 +184,37 @@
             padding-right: 40px;
         }
         .rightSubolder {
+            border-radius: 20px;
+            border-top-right-radius: 0px;
+            border-bottom-right-radius: 0px;
+            overflow-y: scroll;
             margin-left: 15px;
             height: 100%;
             width: 100%;
+            padding: 20px;
             background-color: #f1f1f1;
-            border-radius: 20px;
             -webkit-filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
             filter: drop-shadow(0px 0px 3px rgb(92, 92, 92));
+        }
+        
+        /* width */
+        .rightSubolder::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        /* Track */
+        .rightSubolder::-webkit-scrollbar-track {
+            background: #e6e6e6; 
+        }
+        
+        /* Handle */
+        .rightSubolder::-webkit-scrollbar-thumb {
+            background: #888; 
+        }
+
+        /* Handle on hover */
+        .rightSubolder::-webkit-scrollbar-thumb:hover {
+            background: #555; 
         }
 
         /* Join Game By Code */
@@ -297,6 +322,11 @@
             transform: scale(0.96);
             -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
             filter: drop-shadow(0px 0px 4px rgb(92, 92, 92));
+        }
+
+        /* Class Stats Holder */
+        .classStatsHolder {
+            width: 100%;
         }
       
     </style>
@@ -468,7 +498,81 @@
             </div>
             <div class="rightHolder unselectable">
                 <div class="rightSubolder">
-                           
+                    <div class="classStatsHolder">
+
+                        <div class="quizzJoinHolder">
+                            <div class="quizzJoinTitle">
+                                Manage Classes
+                            </div>
+                            <div class="quizzJoinSubtitle">
+                                Add students to your classes, create quizzes for classes and view statistics for them.
+                            </div>
+                            <div class="quizzJoinBtn" onclick="window.open('teacher/manage.html', '_self');">
+                                Manage
+                            </div>
+                        </div>
+
+                        <div class="quizzJoinHolder">
+                            <div class="quizzJoinTitle">
+                                Manage Classes
+                            </div>
+                            <div class="quizzJoinSubtitle">
+                                Add students to your classes, create quizzes for classes and view statistics for them.
+                            </div>
+                            <div class="quizzJoinBtn" onclick="window.open('teacher/manage.html', '_self');">
+                                Manage
+                            </div>
+                        </div>
+
+                        <div class="quizzJoinHolder">
+                            <div class="quizzJoinTitle">
+                                Manage Classes
+                            </div>
+                            <div class="quizzJoinSubtitle">
+                                Add students to your classes, create quizzes for classes and view statistics for them.
+                            </div>
+                            <div class="quizzJoinBtn" onclick="window.open('teacher/manage.html', '_self');">
+                                Manage
+                            </div>
+                        </div>
+
+                        <div class="quizzJoinHolder">
+                            <div class="quizzJoinTitle">
+                                Manage Classes
+                            </div>
+                            <div class="quizzJoinSubtitle">
+                                Add students to your classes, create quizzes for classes and view statistics for them.
+                            </div>
+                            <div class="quizzJoinBtn" onclick="window.open('teacher/manage.html', '_self');">
+                                Manage
+                            </div>
+                        </div>
+
+                        <div class="quizzJoinHolder">
+                            <div class="quizzJoinTitle">
+                                Manage Classes
+                            </div>
+                            <div class="quizzJoinSubtitle">
+                                Add students to your classes, create quizzes for classes and view statistics for them.
+                            </div>
+                            <div class="quizzJoinBtn" onclick="window.open('teacher/manage.html', '_self');">
+                                Manage
+                            </div>
+                        </div>
+
+                        <div class="quizzJoinHolder">
+                            <div class="quizzJoinTitle">
+                                Manage Classes
+                            </div>
+                            <div class="quizzJoinSubtitle">
+                                Add students to your classes, create quizzes for classes and view statistics for them.
+                            </div>
+                            <div class="quizzJoinBtn" onclick="window.open('teacher/manage.html', '_self');">
+                                Manage
+                            </div>
+                        </div>
+
+                    </div>
                 </div>          
             </div>
         </div>
