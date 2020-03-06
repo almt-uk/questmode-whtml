@@ -318,6 +318,35 @@
             font-family: 'PT Sans';
             color: rgb(0, 0, 0);
         }
+        .addQuestionItemHolder {
+            margin-top: 10px;
+            height: 60px;
+            width: 100%;
+            background-color: #f1f1f1;
+            border-radius: 10px;
+            -webkit-filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0px 0px 2px rgb(92, 92, 92));
+        }
+        .addQuestionItemHolder:hover {
+            cursor: pointer;
+            transform: scale(0.96);
+            -webkit-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.5));
+            filter: drop-shadow(0px 0px 4px rgb(92, 92, 92));
+        }
+        .addQesutionContentHolder {
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            position: relative;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 18px;
+            font-family: 'PT Sans';
+            color: rgb(0, 0, 0);
+        }
       
     </style>
   
@@ -358,46 +387,16 @@
                             Edit
                         </div>
                     </div>
-                    <div class="questionItemsHolder">
-                        <div class="questionItemHolder">
+                    <div class="questionItemsHolder" id="questionItemsHolder">
+                        <div class="questionItemHolder" id="questionItemHolder1">
                             <div class="questionContent">
                                 Where is UoN?
                             </div>
                         </div>
-                        <div class="questionItemHolder">
-                            <div class="questionContent">
-                                What is a long question with ellipsis content?
-                            </div>
-                        </div>
-                        <div class="questionItemHolder">
-                            <div class="questionContent">
-                                Is there a limit for questions?
-                            </div>
-                        </div>
-                        <div class="questionItemHolder">
-                            <div class="questionContent">
-                                How long can the questions be?
-                            </div>
-                        </div>
-                        <div class="questionItemHolder">
-                            <div class="questionContent">
-                                Where is UoN?
-                            </div>
-                        </div>
-                        <div class="questionItemHolder">
-                            <div class="questionContent">
-                                What is a long question with ellipsis content?
-                            </div>
-                        </div>
-                        <div class="questionItemHolder">
-                            <div class="questionContent">
-                                Is there a limit for questions?
-                            </div>
-                        </div>
-                        <div class="questionItemHolder">
-                            <div class="questionContent">
-                                How long can the questions be?
-                            </div>
+                    </div>
+                    <div class="addQuestionItemHolder" onclick="addQuestion()">
+                        <div class="addQesutionContentHolder">
+                            Add a question
                         </div>
                     </div>
                 </div>
@@ -427,65 +426,12 @@
       
 </body>
 <script>
-    var classStatsHolder = document.getElementById("classStatsHolder");
-    var studentStatsHolder = document.getElementById("studentStatsHolder");
-    var addStudentHolder = document.getElementById("addStudentHolder");
-    function classStats()
+    function addQuestion()
     {
-        if(classStatsHolder.classList.contains("hideElement"))
-        {
-            classStatsHolder.classList.remove("hideElement");
-        }
-        if(!addStudentHolder.classList.contains("hideElement"))
-        {
-            addStudentHolder.classList.add("hideElement");
-        }
-        if(!studentStatsHolder.classList.contains("hideElement"))
-        {
-            studentStatsHolder.classList.add("hideElement");
-        }
+        var questionItemsHolder = document.getElementById("questionItemsHolder");
+        questionItemsHolder
+            .append(
+                "unknown"
+            );
     }
-    function studentStats(studentId = 0)
-    {
-        if(!classStatsHolder.classList.contains("hideElement"))
-        {
-            classStatsHolder.classList.add("hideElement");
-        }
-        if(!addStudentHolder.classList.contains("hideElement"))
-        {
-            addStudentHolder.classList.add("hideElement");
-        }
-        if(studentStatsHolder.classList.contains("hideElement"))
-        {
-            studentStatsHolder.classList.remove("hideElement");
-        }
-    }
-    function addStudent()
-    {
-        if(!classStatsHolder.classList.contains("hideElement"))
-        {
-            classStatsHolder.classList.add("hideElement");
-        }
-        if(addStudentHolder.classList.contains("hideElement"))
-        {
-            addStudentHolder.classList.remove("hideElement");
-        }
-        if(!studentStatsHolder.classList.contains("hideElement"))
-        {
-            studentStatsHolder.classList.add("hideElement");
-        }
-    }
-    function addStudentJS()
-    {
-        if(document.getElementById("quizzCode").value.length != 0)
-        {
-            alert(document.getElementById("quizzCode").value);
-            document.getElementById("quizzCode").value = "";
-        }
-    }
-    $('#quizzCode').keyup(function (e) {
-        if (e.keyCode === 13) {
-            addStudentJS();
-        }
-    });
 </script>
