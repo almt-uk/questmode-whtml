@@ -630,7 +630,8 @@
         }
     }
 
-    var currentQuestion = -1;
+    var currentQuestion = 1;
+    var totalQuestions = -1;
 
     addQuestion();
 
@@ -661,8 +662,8 @@
         var divc = document.createElement("div");
         divc.classList.add("questionItemHolder");
         divc.id = 'questionItemHolder' + (questionItemsHolder.childElementCount + 1);
-        currentQuestion = questionItemsHolder.childElementCount + 1;
-        divc.setAttribute("questionID", currentQuestion);
+        totalQuestions = questionItemsHolder.childElementCount + 1;
+        divc.setAttribute("questionID", totalQuestions);
         divc.onclick = function () {
             manageQuestion(divc.getAttribute('questionID'));
         };
@@ -674,6 +675,7 @@
             .append(divc);
     }
     function manageQuestion(questionNo = -1) {
+        currentQuestion = questionNo;
         console.log(questions[questionNo - 1]);
     }
 </script>
