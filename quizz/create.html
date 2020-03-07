@@ -611,9 +611,17 @@
 </body>
 <script>
     questionContent.oninput = function() {
-        var questionItemsHolder = document.getElementById("questionItemsHolder").querySelector('questionItemHolder' + currentQuestion);
-        // questionItemsHolder.get
-        questionItemsHolder.innerText = questionContent.value;
+        var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
+        // console.log(questionItemsHolder, 'questionItemHolder' + currentQuestion);
+        
+        var children = document.getElementById("questionItemsHolder").childNodes;
+        for (var i=0; i<children.length; i++) {
+            var child = children[i];
+            if (child.id == 'questionItemHolder' + currentQuestion) {
+                child.childNodes[0].innerText = questionContent.value;
+                // child.getRootNode
+            }            
+        }
     };
     var currentQuestion = -1;
     addQuestion();
