@@ -613,12 +613,15 @@
     questionContent.oninput = function() {
         console.log(questionContent.value);
     };
+    var currentQuestion = -1;
+    addQuestion();
     function addQuestion()
     {
         var questionItemsHolder = document.getElementById("questionItemsHolder");
         var divc = document.createElement("div");
         divc.classList.add("questionItemHolder");
-        divc.id = 'questionItemHolder' + questionItemsHolder.childElementCount + 1;
+        divc.id = 'questionItemHolder' + (questionItemsHolder.childElementCount + 1);
+        currentQuestion = questionItemsHolder.childElementCount + 1;
         var divc2 = document.createElement("div");
         divc2.classList.add("questionContent");
         divc2.innerText = "Question";
