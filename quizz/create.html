@@ -565,7 +565,7 @@
                                 </div>
                             </div>
                             <label class="pure-material-textfield-outlined quizzTitleInputHolder">
-                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <input class="inputHolder" id="quizzTitle" placeholder=" " type="text" required>
                               <span>Quizz Title</span>
                             </label>
                             <div class="quizzVisibilityHolder">
@@ -686,6 +686,7 @@
             this.visibility = 0;
         }
     }
+    var quizzData = new Quizz;
     var questions = [];
     class Question {
         constructor() {
@@ -705,7 +706,8 @@
             this.time_results = 5;
         }
     }
-
+    
+    var quizzTitle = document.getElementById("quizzTitle");
     var questionContent = document.getElementById("questionContent");
     var questionExp = document.getElementById("questionExp");
     var questionImageURL = document.getElementById("questionImageURL");
@@ -723,6 +725,10 @@
 
     var currentQuestion = -1;
     var totalQuestions = -1;
+
+    quizzTitle.oninput = function() {
+        quizzData.title = quizzTitle.value;
+    };
 
     questionContent.oninput = function() {
         questions[currentQuestion - 1].content = questionContent.value;
@@ -836,6 +842,7 @@
         {
             questionDataHolder.classList.add("hideElement");
         }
+        quizzTitle.value = quizzData.title;
     }
 
     function addQuestion()
