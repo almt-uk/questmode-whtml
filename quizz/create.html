@@ -621,7 +621,7 @@
                                         Make Quizz Public (it will be visible to everyone)
                                     </div>
                                     <label class="pure-material-checkbox quizzVisibilityCBHolder">
-                                        <input type="checkbox" id="chAsw1">
+                                        <input type="checkbox" id="chQuizzVisibility">
                                         <span>visible</span>
                                     </label>
                                 </div>
@@ -779,6 +779,15 @@
         quizzData.title = quizzTitle.value;
     };
 
+    chQuizzVisibility.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            quizzData.visibility = 1;
+        } else {
+            quizzData.visibility = 0;
+        }
+    };
+
     questionContent.oninput = function() {
         questions[currentQuestion - 1].content = questionContent.value;
         var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
@@ -892,6 +901,7 @@
             questionDataHolder.classList.add("hideElement");
         }
         quizzTitle.value = quizzData.title;
+        chQuizzVisibility.checked = quizzData.visibility;
     }
 
     function publishQuizz()
