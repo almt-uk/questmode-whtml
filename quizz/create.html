@@ -636,8 +636,10 @@
         var divc = document.createElement("div");
         divc.classList.add("questionItemHolder");
         divc.id = 'questionItemHolder' + (questionItemsHolder.childElementCount + 1);
-        divc.onclick="printWorking";
         currentQuestion = questionItemsHolder.childElementCount + 1;
+        divc.onclick = function () {
+            manageQuestion(currentQuestion);
+        };
         var divc2 = document.createElement("div");
         divc2.classList.add("questionContent");
         divc2.innerText = "Question";
@@ -646,6 +648,6 @@
             .append(divc);
     }
     function manageQuestion(questionNo = -1) {
-        console.log(manageQuestion);
+        console.log(questionNo);
     }
 </script>
