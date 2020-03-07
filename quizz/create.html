@@ -611,7 +611,9 @@
 </body>
 <script>
     questionContent.oninput = function() {
-        console.log(questionContent.value);
+        var questionItemsHolder = document.getElementById("questionItemsHolder").querySelector('questionItemHolder' + currentQuestion);
+        // questionItemsHolder.get
+        console.log(questionContent.value, currentQuestion);
     };
     var currentQuestion = -1;
     addQuestion();
