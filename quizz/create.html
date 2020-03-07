@@ -508,7 +508,7 @@
                      -->
                     <div class="questionDataHolder" id="questionDataHolder">
                         <div class="questionDataTitle">
-                            <div class="questionEditTitle">
+                            <div class="questionEditTitle" id="questionEditTitle">
                                 Edit Question
                             </div>
                         </div>
@@ -656,10 +656,12 @@
             if (child.id == 'questionItemHolder' + currentQuestion) {
                 if(questionContent.value.length != 0)
                 {
+                    questionEditTitle.innerText = questionContent.value;
                     child.childNodes[0].innerText = questionContent.value;
                 }
                 else
                 {
+                    questionEditTitle.innerText = "Edit Question Details";
                     child.childNodes[0].innerText = "Question";
                 }
             }            
@@ -772,6 +774,14 @@
     function manageQuestion(questionNo = -1) {
         currentQuestion = questionNo;
 
+        if(questions[questionNo - 1].content.length != 0)
+        {
+            questionEditTitle.innerText = questions[questionNo - 1].content;
+        }
+        else
+        {
+            questionEditTitle.innerText = "Edit Question Details";
+        }
         questionContent.value = questions[questionNo - 1].content;
         questionExp.value = questions[questionNo - 1].experience;
         questionImageURL.value = questions[questionNo - 1].image_url;
