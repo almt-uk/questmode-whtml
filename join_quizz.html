@@ -193,6 +193,13 @@
             font-size: 17px;
             color: rgb(0, 0, 0);
         }
+        .nicknameHolder {
+            margin-top: 10px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 17px;
+            color: rgb(0, 0, 0);
+        }
         .inputHolder {
             font-weight: 900;
             font-size: 18px;
@@ -258,10 +265,18 @@
             <div class="quizzCodeTitle">
                 Enter Quizz Code
             </div>
-            <label class="pure-material-textfield-outlined codeHolder">
-              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
-              <span>Code</span>
-            </label>
+            <div class="inputHolder">
+                <label class="pure-material-textfield-outlined codeHolder">
+                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                  <span>Code</span>
+                </label>
+            </div>
+            <div class="inputHolder">
+                <label class="pure-material-textfield-outlined nicknameHolder">
+                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                  <span>Nickname</span>
+                </label>
+            </div>
             <div class="quizzCodeBtn" onclick="window.open('quizz/waiting.html', '_self');">
                 Join Quizz
             </div>
