@@ -283,6 +283,38 @@
             box-shadow: inset 0 0 10px #00000083;
             cursor: pointer;         
         }
+        .quizzJoinBtn2 {
+            width: fit-content;
+            margin-top: 10px;
+            padding-top: 6px;
+            margin-bottom: 4px;
+            padding-bottom: 6px;
+            font-weight: 900;
+            font-size: 16px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-family: 'PT Sans';
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            background-color: #1a008d;
+            -webkit-filter: drop-shadow(0px 0px 4px #1a008dc0);
+            filter: drop-shadow(0px 0px 4px #1a008dbe);
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            box-shadow: inset 0 0 10px #00000083;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        .quizzJoinBtn2:hover {
+            transform: translate(-50%, 0%) scale(0.95);
+            background-color: #3b00df;
+            -webkit-filter: drop-shadow(0px 0px 6px #1a008dc0);
+            filter: drop-shadow(0px 0px 6px #1a008dbe);
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            box-shadow: inset 0 0 10px #00000083;
+            cursor: pointer;         
+        }
 
         /* Questions Holder Style */
         .questionItemsHolder {
@@ -525,13 +557,16 @@
 
                     <div class="quizzJoinHolder">
                         <div class="quizzJoinTitle">
-                            Manage Quizz Details
+                            Quizz Publish Options
                         </div>
                         <div class="quizzJoinSubtitle selectable">
-                            Manage details such as the waiting time for the questions, picking answers, options chose and the rankings pages
+                            You can publish the current quizz or save it and modify later
                         </div>
                         <div class="quizzJoinBtn" onclick="quizzEdit()">
-                            Create Quizz
+                            Publish Quizz
+                        </div>
+                        <div class="quizzJoinBtn2" onclick="quizzEdit()">
+                            Save for later
                         </div>
                     </div>
 
