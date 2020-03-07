@@ -429,9 +429,14 @@
     function addQuestion()
     {
         var questionItemsHolder = document.getElementById("questionItemsHolder");
+        var divc = document.createElement("div");
+        divc.classList.add("questionItemHolder");
+        divc.id = 'questionItemHolder' + questionItemsHolder.childElementCount + 1;
+        var divc2 = document.createElement("div");
+        divc2.classList.add("questionContent");
+        divc2.innerText = "New question...";
+        divc.append(divc2);
         questionItemsHolder
-            .append(
-                "unknown"
-            );
+            .append(divc);
     }
 </script>
