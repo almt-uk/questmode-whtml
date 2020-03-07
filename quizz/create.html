@@ -637,6 +637,7 @@
         divc.classList.add("questionItemHolder");
         divc.id = 'questionItemHolder' + (questionItemsHolder.childElementCount + 1);
         currentQuestion = questionItemsHolder.childElementCount + 1;
+        divc.setAttribute("questionID", currentQuestion);
         divc.onclick = function () {
             manageQuestion(divc.id);
         };
