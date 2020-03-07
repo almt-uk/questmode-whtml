@@ -348,6 +348,26 @@
             color: rgb(0, 0, 0);
         }
 
+        /* Quizz Details Edit Holder */
+        .quizzTitleHolder {
+            position: relative;
+            left: 50%;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            transform: translateX(-50%);
+        }
+        .quizzTitleContent {
+            color: #000000;
+            font-weight: 900;
+            font-size: 26px;
+            font-family: 'PT Sans';
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
         /* Class Stats Holder */
         .questionDataHolder {
             width: 100%;
@@ -512,10 +532,12 @@
                             -time to view the right answer and results;
                             -time to view the rankings after each question;
                      -->
-                    <div class="addStudentHolder" id="addStudentHolder">
+                    <div class="questionDataHolder" id="addStudentHolder">
                         <div class="quizzCodeHolder">
-                            <div class="quizzCodeTitle">
-                                Enter Student ID or Username
+                            <div class="quizzTitleHolder">
+                                <div class="quizzTitleContent" id="quizzTitleContent">
+                                    Edit Quizz Details
+                                </div>
                             </div>
                             <label class="pure-material-textfield-outlined codeHolder">
                               <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
