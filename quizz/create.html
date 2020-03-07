@@ -613,7 +613,7 @@
     questionContent.oninput = function() {
         var questionItemsHolder = document.getElementById("questionItemsHolder").querySelector('questionItemHolder' + currentQuestion);
         // questionItemsHolder.get
-        console.log(questionContent.value, currentQuestion);
+        questionItemsHolder.innerText = questionContent.value;
     };
     var currentQuestion = -1;
     addQuestion();
