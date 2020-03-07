@@ -588,7 +588,7 @@
                                     Time to view results
                                 </div>
                                 <label class="pure-material-textfield-outlined">
-                                  <input class="inputHolder" id="timeView" placeholder=" " type="text" required>
+                                  <input class="inputHolder" type="number" id="timeView" placeholder=" " type="text" required>
                                   <span>time (s)</span>
                                 </label>
                             </div>
@@ -679,8 +679,6 @@
         var regex = /^[0-9]+$/;
         if(regex.test(timeRead.value)) {
             questions[currentQuestion - 1].time_question = timeRead.value;
-        } else {
-            timeRead.value = timeRead.value.substring(0, timeRead.value.length - 1);
         }
     };
 
@@ -688,8 +686,6 @@
         var regex = /^[0-9]+$/;
         if(regex.test(timeAnswer.value)) {
             questions[currentQuestion - 1].time_answer = timeAnswer.value;
-        } else {
-            timeAnswer.value = timeAnswer.value.substring(0, timeAnswer.value.length - 1);
         }
     };
 
@@ -697,8 +693,6 @@
         var regex = /^[0-9]+$/;
         if(regex.test(timeView.value)) {
             questions[currentQuestion - 1].time_results = timeView.value;
-        } else {
-            timeView.value = timeView.value.substring(0, timeView.value.length - 1);
         }
     };
 
