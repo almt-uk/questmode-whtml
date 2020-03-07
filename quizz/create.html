@@ -629,15 +629,26 @@
             }            
         }
     };
-    class ZFlow {
+    class Question {
         constructor() {
-            this.name = '';
-            this.dept = 'general';
+            this.content = '';
+            this.image_url = '';
+            this.experience = '';
+            this.answer1 = '';
+            this.answer2 = '';
+            this.answer3 = '';
+            this.answer4 = '';
+            this.answer1_correct = 0;
+            this.answer2_correct = 0;
+            this.answer3_correct = 0;
+            this.answer4_correct = 0;
+            this.time_question = 5;
+            this.time_answer = 5;
+            this.time_results = 5;
         }
     }
-    var employee = new ZFlow;
-    employee.name = 'jtjt';
-    console.log(employee.name);
+    var question = new Question;
+
     function addQuestion()
     {
         var questionItemsHolder = document.getElementById("questionItemsHolder");
