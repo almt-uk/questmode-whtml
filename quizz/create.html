@@ -656,35 +656,38 @@
     };
 
     questionImageURL.oninput = function() {
-        questions[currentQuestion - 1].experience = questionImageURL.value;
+        questions[currentQuestion - 1].image_url = questionImageURL.value;
     };
 
     questionAsw1.oninput = function() {
-        questions[currentQuestion - 1].experience = questionAsw1.value;
+        questions[currentQuestion - 1].answer1 = questionAsw1.value;
     };
 
     questionAsw2.oninput = function() {
-        questions[currentQuestion - 1].experience = questionAsw2.value;
+        questions[currentQuestion - 1].answer2 = questionAsw2.value;
     };
 
     questionAsw3.oninput = function() {
-        questions[currentQuestion - 1].experience = questionAsw3.value;
+        questions[currentQuestion - 1].answer3 = questionAsw3.value;
     };
 
     questionAsw4.oninput = function() {
-        questions[currentQuestion - 1].experience = questionAsw4.value;
+        questions[currentQuestion - 1].answer4 = questionAsw4.value;
     };
 
     timeRead.oninput = function() {
-        questions[currentQuestion - 1].experience = timeRead.value;
+        questions[currentQuestion - 1].time_question = timeRead.value;
     };
 
     timeAnswer.oninput = function() {
-        questions[currentQuestion - 1].experience = timeAnswer.value;
+        questions[currentQuestion - 1].time_answer = timeAnswer.value;
     };
 
     timeView.oninput = function() {
-        questions[currentQuestion - 1].experience = timeView.value;
+        var regex = /^[0-9]+$/;
+        if(regex.test(timeView.value)) {
+            questions[currentQuestion - 1].time_results = timeView.value;
+        }
     };
 
     function addQuestion()
