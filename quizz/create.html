@@ -533,16 +533,16 @@
                               <input class="inputHolder" id="questionAsw1" placeholder=" " type="text" required>
                               <span>Answer 1</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder" id="chAsw1">
-                                <input type="checkbox">
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox" id="chAsw1">
                                 <span>Correct</span>
                             </label>
                             <label class="pure-material-textfield-outlined answerHolder">
                               <input class="inputHolder" id="questionAsw2" placeholder=" " type="text" required>
                               <span>Answer 2</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder" id="chAsw2">
-                                <input type="checkbox">
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox" id="chAsw2">
                                 <span>Correct</span>
                             </label>
                         </div>
@@ -551,16 +551,16 @@
                               <input class="inputHolder" id="questionAsw3" placeholder=" " type="text" required>
                               <span>Answer 3</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder" id="chAsw3">
-                                <input type="checkbox">
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox" id="chAsw3">
                                 <span>Correct</span>
                             </label>
                             <label class="pure-material-textfield-outlined answerHolder">
                               <input class="inputHolder" id="questionAsw4" placeholder=" " type="text" required>
                               <span>Answer 4</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder" id="chAsw4">
-                                <input type="checkbox">
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox" id="chAsw4">
                                 <span>Correct</span>
                             </label>
                         </div>
@@ -708,6 +708,42 @@
         var regex = /^[0-9]+$/;
         if(regex.test(timeView.value)) {
             questions[currentQuestion - 1].time_results = timeView.value;
+        }
+    };
+
+    chAsw1.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            questions[currentQuestion - 1].answer1_correct = 1;
+        } else {
+            questions[currentQuestion - 1].answer1_correct = 0;
+        }
+    };
+
+    chAsw2.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            questions[currentQuestion - 1].answer2_correct = 1;
+        } else {
+            questions[currentQuestion - 1].answer2_correct = 0;
+        }
+    };
+
+    chAsw3.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            questions[currentQuestion - 1].answer3_correct = 1;
+        } else {
+            questions[currentQuestion - 1].answer3_correct = 0;
+        }
+    };
+
+    chAsw4.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            questions[currentQuestion - 1].answer4_correct = 1;
+        } else {
+            questions[currentQuestion - 1].answer4_correct = 0;
         }
     };
 
