@@ -610,6 +610,9 @@
       
 </body>
 <script>
+    questionContent.oninput = function() {
+        console.log(questionContent.value);
+    };
     function addQuestion()
     {
         var questionItemsHolder = document.getElementById("questionItemsHolder");
