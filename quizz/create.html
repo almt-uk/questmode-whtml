@@ -676,17 +676,29 @@
     };
 
     timeRead.oninput = function() {
-        questions[currentQuestion - 1].time_question = timeRead.value;
+        var regex = /^[0-9]+$/;
+        if(regex.test(timeRead.value)) {
+            questions[currentQuestion - 1].time_question = timeRead.value;
+        } else {
+            timeRead.value = timeRead.value.substring(0, timeRead.value.length - 1);
+        }
     };
 
     timeAnswer.oninput = function() {
-        questions[currentQuestion - 1].time_answer = timeAnswer.value;
+        var regex = /^[0-9]+$/;
+        if(regex.test(timeAnswer.value)) {
+            questions[currentQuestion - 1].time_answer = timeAnswer.value;
+        } else {
+            timeAnswer.value = timeAnswer.value.substring(0, timeAnswer.value.length - 1);
+        }
     };
 
     timeView.oninput = function() {
         var regex = /^[0-9]+$/;
         if(regex.test(timeView.value)) {
             questions[currentQuestion - 1].time_results = timeView.value;
+        } else {
+            timeView.value = timeView.value.substring(0, timeView.value.length - 1);
         }
     };
 
