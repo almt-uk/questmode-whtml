@@ -907,6 +907,14 @@
         console.log(quizzData, questions);
     }
 
+    function saveForLater()
+    {
+        if (quizzData.title == '')
+        {
+            alert("Quizz Title can not be empty");
+        }
+    }
+
     function addQuestion()
     {
         var question = new Question;
