@@ -614,7 +614,6 @@
     addQuestion();
     questionContent.oninput = function() {
         var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
-        
         var children = document.getElementById("questionItemsHolder").childNodes;
         for (var i=0; i<children.length; i++) {
             var child = children[i];
@@ -630,6 +629,14 @@
             }            
         }
     };
+    class ZFlow {
+        constructor() {
+            this.name = '';
+            this.dept = 'general';
+        }
+    }
+    var employee = new ZFlow;
+    employee.name = 'jtjt';
     function addQuestion()
     {
         var questionItemsHolder = document.getElementById("questionItemsHolder");
@@ -650,11 +657,5 @@
     }
     function manageQuestion(questionNo = -1) {
         console.log(questionNo);
-    }
-    class Employee {
-        constructor() {
-            this.name = '';
-            this.dept = 'general';
-        }
     }
 </script>
