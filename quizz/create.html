@@ -614,8 +614,8 @@
     class Question {
         constructor() {
             this.content = '';
-            this.image_url = '';
             this.experience = '';
+            this.image_url = '';
             this.answer1 = '';
             this.answer2 = '';
             this.answer3 = '';
@@ -630,12 +630,13 @@
         }
     }
 
-    var currentQuestion = 1;
+    var currentQuestion = -1;
     var totalQuestions = -1;
 
     addQuestion();
 
     questionContent.oninput = function() {
+        questions[currentQuestion - 1].content = questionContent.value;
         var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
         var children = document.getElementById("questionItemsHolder").childNodes;
         for (var i=0; i<children.length; i++) {
@@ -651,6 +652,10 @@
                 }
             }            
         }
+    };
+
+    questionExp.oninput = function() {
+        questions[currentQuestion - 1].experience = questionContent.value;
     };
 
     function addQuestion()
@@ -673,9 +678,13 @@
         divc.append(divc2);
         questionItemsHolder
             .append(divc);
+        manageQuestion(totalQuestions)
     }
     function manageQuestion(questionNo = -1) {
         currentQuestion = questionNo;
+        var questionContent = document.getElementById("questionContent")
+        questionContent.value = questions[questionNo - 1].content;
+
         console.log(questions[questionNo - 1]);
     }
 </script>
