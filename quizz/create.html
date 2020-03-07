@@ -665,8 +665,6 @@
     var currentQuestion = -1;
     var totalQuestions = -1;
 
-    addQuestion();
-
     questionContent.oninput = function() {
         questions[currentQuestion - 1].content = questionContent.value;
         var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
@@ -771,7 +769,14 @@
 
     function quizzEdit()
     {
-
+        if(addStudentHolder.classList.contains("hideElement"))
+        {
+            addStudentHolder.classList.remove("hideElement");
+        }
+        if(!questionDataHolder.classList.contains("hideElement"))
+        {
+            questionDataHolder.classList.add("hideElement");
+        }
     }
 
     function addQuestion()
@@ -798,6 +803,15 @@
     }
 
     function manageQuestion(questionNo = -1) {
+        if(!addStudentHolder.classList.contains("hideElement"))
+        {
+            addStudentHolder.classList.add("hideElement");
+        }
+        if(questionDataHolder.classList.contains("hideElement"))
+        {
+            questionDataHolder.classList.remove("hideElement");
+        }
+
         currentQuestion = questionNo;
 
         if(questions[questionNo - 1].content.length != 0)
