@@ -347,7 +347,55 @@
             font-family: 'PT Sans';
             color: rgb(0, 0, 0);
         }
-      
+
+        /* Class Stats Holder */
+        .questionDataHolder {
+            width: 100%;
+        }
+        .questionDataTitle {
+            width: fit-content;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .questionEditTitle {
+            color: #000000;
+            font-weight: 900;
+            font-size: 26px;
+            font-family: 'PT Sans';
+            text-align: center;
+        }
+        .questionContentHolder {
+            float: left;
+            width: 90%;
+            margin-right: 1%;
+        }
+        .questionExpHolder {
+            float: left;
+            width: 9%;
+        }
+        .questionURLHolder {
+            float: left;
+            width: 50%;
+            margin-right: 1%;
+        }
+        .answersHolder {
+            float: left;
+            width: 100%;
+            margin-top: 10px;
+        }
+        .answerHolder {
+            float: left;
+            width: 38%;
+            margin-right: 1%;
+        }
+        .answerCBHolder {
+            float: left;
+            width: 10%;
+            margin-right: 1%;
+            margin-top: 20px;
+        }
+        
     </style>
   
 </head>
@@ -414,6 +462,66 @@
                             -time to view the right answer and results;
                             -time to view the rankings after each question;
                      -->
+                    <div class="questionDataHolder" id="questionDataHolder">
+                        <div class="questionDataTitle">
+                            <div class="questionEditTitle">
+                                Edit Question
+                            </div>
+                        </div>
+                        <div class="questionHolder">
+                            <label class="pure-material-textfield-outlined questionContentHolder">
+                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <span>Question</span>
+                            </label>
+                            <label class="pure-material-textfield-outlined questionExpHolder">
+                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <span>EXP</span>
+                            </label>
+                        </div>
+                        <div class="questionHolder">
+                            <label class="pure-material-textfield-outlined questionURLHolder">
+                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <span>Image URL</span>
+                            </label>
+                        </div>
+                        <div class="answersHolder">
+                            <label class="pure-material-textfield-outlined answerHolder">
+                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <span>Answer 1</span>
+                            </label>
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox">
+                                <span>Correct</span>
+                            </label>
+                            <label class="pure-material-textfield-outlined answerHolder">
+                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <span>Answer 2</span>
+                            </label>
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox">
+                                <span>Correct</span>
+                            </label>
+                        </div>
+                        <div class="answersHolder">
+                            <label class="pure-material-textfield-outlined answerHolder">
+                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <span>Answer 3</span>
+                            </label>
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox">
+                                <span>Correct</span>
+                            </label>
+                            <label class="pure-material-textfield-outlined answerHolder">
+                              <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                              <span>Answer 4</span>
+                            </label>
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox">
+                                <span>Correct</span>
+                            </label>
+                        </div>
+                    </div>
+
                 </div>          
             </div>
         </div>
@@ -429,9 +537,14 @@
     function addQuestion()
     {
         var questionItemsHolder = document.getElementById("questionItemsHolder");
+        var divc = document.createElement("div");
+        divc.classList.add("questionItemHolder");
+        divc.id = 'questionItemHolder' + questionItemsHolder.childElementCount + 1;
+        var divc2 = document.createElement("div");
+        divc2.classList.add("questionContent");
+        divc2.innerText = "New question...";
+        divc.append(divc2);
         questionItemsHolder
-            .append(
-                "unknown"
-            );
+            .append(divc);
     }
 </script>
