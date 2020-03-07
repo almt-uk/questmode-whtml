@@ -283,6 +283,38 @@
             box-shadow: inset 0 0 10px #00000083;
             cursor: pointer;         
         }
+        .quizzJoinBtn2 {
+            width: fit-content;
+            margin-top: 10px;
+            padding-top: 6px;
+            margin-bottom: 4px;
+            padding-bottom: 6px;
+            font-weight: 900;
+            font-size: 16px;
+            padding-left: 30px;
+            padding-right: 30px;
+            font-family: 'PT Sans';
+            color: rgb(255, 255, 255);
+            border-radius: 5px;
+            background-color: #1a008d;
+            -webkit-filter: drop-shadow(0px 0px 4px #1a008dc0);
+            filter: drop-shadow(0px 0px 4px #1a008dbe);
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            box-shadow: inset 0 0 10px #00000083;
+            margin-left: 50%;
+            transform: translate(-50%, 0%);
+        }
+        .quizzJoinBtn2:hover {
+            transform: translate(-50%, 0%) scale(0.95);
+            background-color: #3b00df;
+            -webkit-filter: drop-shadow(0px 0px 6px #1a008dc0);
+            filter: drop-shadow(0px 0px 6px #1a008dbe);
+            -moz-box-shadow: inset 0 0 10px #00000083;
+            -webkit-box-shadow: inset 0 0 10px #00000083;
+            box-shadow: inset 0 0 10px #00000083;
+            cursor: pointer;         
+        }
 
         /* Questions Holder Style */
         .questionItemsHolder {
@@ -348,14 +380,61 @@
             color: rgb(0, 0, 0);
         }
 
+        /* Quizz Details Edit Holder */
+        .quizzTitleHolder {
+            position: relative;
+            left: 50%;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            transform: translateX(-50%);
+        }
+        .quizzTitleContent {
+            color: #000000;
+            font-weight: 900;
+            font-size: 26px;
+            font-family: 'PT Sans';
+            text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        .quizzDataHolder {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .quizzTitleInputHolder {
+            float: left;
+            width: 70%;
+            margin-top: 10px;
+        }
+        .quizzVisibilityHolder {
+            float: left;
+            width: 100%;
+            margin-right: 10px;
+            margin-top: 10px;
+        }
+        .quizzVisibilityContentHolder {
+            color: #000000;
+            font-weight: 900;
+            font-size: 18px;
+            font-family: 'PT Sans';
+        }
+        .quizzVisibilityCBHolder {
+            width: 10%;
+            margin-left: 1%;
+        }
+
         /* Class Stats Holder */
         .questionDataHolder {
             width: 100%;
         }
         .questionDataTitle {
-            width: fit-content;
             position: relative;
             left: 50%;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
             transform: translateX(-50%);
         }
         .questionEditTitle {
@@ -364,6 +443,9 @@
             font-size: 26px;
             font-family: 'PT Sans';
             text-align: center;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
         }
         .questionContentHolder {
             float: left;
@@ -376,8 +458,9 @@
         }
         .questionURLHolder {
             float: left;
-            width: 50%;
+            width: 70%;
             margin-right: 1%;
+            margin-top: 10px;
         }
         .answersHolder {
             float: left;
@@ -474,12 +557,27 @@
 
                     <div class="quizzJoinHolder">
                         <div class="quizzJoinTitle">
+                            Quizz Publish Options
+                        </div>
+                        <div class="quizzJoinSubtitle selectable">
+                            You can publish the current quizz or save it and modify later
+                        </div>
+                        <div class="quizzJoinBtn" onclick="publishQuizz()">
+                            Publish Quizz
+                        </div>
+                        <div class="quizzJoinBtn2" onclick="saveForLater()">
+                            Save for later
+                        </div>
+                    </div>
+
+                    <div class="quizzJoinHolder">
+                        <div class="quizzJoinTitle">
                             Manage Quizz Details
                         </div>
                         <div class="quizzJoinSubtitle selectable">
                             Manage details such as the waiting time for the questions, picking answers, options chose and the rankings pages
                         </div>
-                        <div class="quizzJoinBtn" onclick="classStats()">
+                        <div class="quizzJoinBtn" onclick="quizzEdit()">
                             Edit
                         </div>
                     </div>
@@ -506,9 +604,33 @@
                             -time to view the right answer and results;
                             -time to view the rankings after each question;
                      -->
-                    <div class="questionDataHolder" id="questionDataHolder">
+                    <div class="questionDataHolder" id="addStudentHolder">
+                        <div class="quizzCodeHolder">
+                            <div class="quizzTitleHolder">
+                                <div class="quizzTitleContent" id="quizzTitleContent">
+                                    Edit Quizz Details
+                                </div>
+                            </div>
+                            <div class="quizzDataHolder">
+                                <label class="pure-material-textfield-outlined quizzTitleInputHolder">
+                                  <input class="inputHolder" id="quizzTitle" placeholder=" " type="text" required>
+                                  <span>Quizz Title</span>
+                                </label>
+                                <div class="quizzVisibilityHolder">
+                                    <div class="quizzVisibilityContentHolder">
+                                        Make Quizz Public (it will be visible to everyone)
+                                    </div>
+                                    <label class="pure-material-checkbox quizzVisibilityCBHolder">
+                                        <input type="checkbox" id="chAsw1">
+                                        <span>visible</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="questionDataHolder hideElement" id="questionDataHolder">
                         <div class="questionDataTitle">
-                            <div class="questionEditTitle">
+                            <div class="questionEditTitle" id="questionEditTitle">
                                 Edit Question
                             </div>
                         </div>
@@ -533,16 +655,16 @@
                               <input class="inputHolder" id="questionAsw1" placeholder=" " type="text" required>
                               <span>Answer 1</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder" id="chAsw1">
-                                <input type="checkbox">
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox" id="chAsw1">
                                 <span>Correct</span>
                             </label>
                             <label class="pure-material-textfield-outlined answerHolder">
                               <input class="inputHolder" id="questionAsw2" placeholder=" " type="text" required>
                               <span>Answer 2</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder" id="chAsw2">
-                                <input type="checkbox">
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox" id="chAsw2">
                                 <span>Correct</span>
                             </label>
                         </div>
@@ -551,16 +673,16 @@
                               <input class="inputHolder" id="questionAsw3" placeholder=" " type="text" required>
                               <span>Answer 3</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder" id="chAsw3">
-                                <input type="checkbox">
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox" id="chAsw3">
                                 <span>Correct</span>
                             </label>
                             <label class="pure-material-textfield-outlined answerHolder">
                               <input class="inputHolder" id="questionAsw4" placeholder=" " type="text" required>
                               <span>Answer 4</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder" id="chAsw4">
-                                <input type="checkbox">
+                            <label class="pure-material-checkbox answerCBHolder">
+                                <input type="checkbox" id="chAsw4">
                                 <span>Correct</span>
                             </label>
                         </div>
@@ -607,6 +729,13 @@
       
 </body>
 <script>
+    class Quizz {
+        constructor() {
+            this.title = '';
+            this.visibility = 0;
+        }
+    }
+    var quizzData = new Quizz;
     var questions = [];
     class Question {
         constructor() {
@@ -626,7 +755,8 @@
             this.time_results = 5;
         }
     }
-
+    
+    var quizzTitle = document.getElementById("quizzTitle");
     var questionContent = document.getElementById("questionContent");
     var questionExp = document.getElementById("questionExp");
     var questionImageURL = document.getElementById("questionImageURL");
@@ -645,7 +775,9 @@
     var currentQuestion = -1;
     var totalQuestions = -1;
 
-    addQuestion();
+    quizzTitle.oninput = function() {
+        quizzData.title = quizzTitle.value;
+    };
 
     questionContent.oninput = function() {
         questions[currentQuestion - 1].content = questionContent.value;
@@ -656,10 +788,12 @@
             if (child.id == 'questionItemHolder' + currentQuestion) {
                 if(questionContent.value.length != 0)
                 {
+                    questionEditTitle.innerText = questionContent.value;
                     child.childNodes[0].innerText = questionContent.value;
                 }
                 else
                 {
+                    questionEditTitle.innerText = "Edit Question Details";
                     child.childNodes[0].innerText = "Question";
                 }
             }            
@@ -711,6 +845,55 @@
         }
     };
 
+    chAsw1.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            questions[currentQuestion - 1].answer1_correct = 1;
+        } else {
+            questions[currentQuestion - 1].answer1_correct = 0;
+        }
+    };
+
+    chAsw2.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            questions[currentQuestion - 1].answer2_correct = 1;
+        } else {
+            questions[currentQuestion - 1].answer2_correct = 0;
+        }
+    };
+
+    chAsw3.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            questions[currentQuestion - 1].answer3_correct = 1;
+        } else {
+            questions[currentQuestion - 1].answer3_correct = 0;
+        }
+    };
+
+    chAsw4.onclick = function(event) {
+        var checkbox = event.target;
+        if (checkbox.checked) {
+            questions[currentQuestion - 1].answer4_correct = 1;
+        } else {
+            questions[currentQuestion - 1].answer4_correct = 0;
+        }
+    };
+
+    function quizzEdit()
+    {
+        if(addStudentHolder.classList.contains("hideElement"))
+        {
+            addStudentHolder.classList.remove("hideElement");
+        }
+        if(!questionDataHolder.classList.contains("hideElement"))
+        {
+            questionDataHolder.classList.add("hideElement");
+        }
+        quizzTitle.value = quizzData.title;
+    }
+
     function addQuestion()
     {
         var question = new Question;
@@ -733,9 +916,27 @@
             .append(divc);
         manageQuestion(totalQuestions)
     }
+
     function manageQuestion(questionNo = -1) {
+        if(!addStudentHolder.classList.contains("hideElement"))
+        {
+            addStudentHolder.classList.add("hideElement");
+        }
+        if(questionDataHolder.classList.contains("hideElement"))
+        {
+            questionDataHolder.classList.remove("hideElement");
+        }
+
         currentQuestion = questionNo;
 
+        if(questions[questionNo - 1].content.length != 0)
+        {
+            questionEditTitle.innerText = questions[questionNo - 1].content;
+        }
+        else
+        {
+            questionEditTitle.innerText = "Edit Question Details";
+        }
         questionContent.value = questions[questionNo - 1].content;
         questionExp.value = questions[questionNo - 1].experience;
         questionImageURL.value = questions[questionNo - 1].image_url;
@@ -750,7 +951,6 @@
         timeRead.value = questions[questionNo - 1].time_question;
         timeAnswer.value = questions[questionNo - 1].time_answer;
         timeView.value = questions[questionNo - 1].time_results;
-
-        console.log(questions[questionNo - 1]);
     }
+
 </script>
