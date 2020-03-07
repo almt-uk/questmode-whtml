@@ -639,7 +639,7 @@
         currentQuestion = questionItemsHolder.childElementCount + 1;
         divc.setAttribute("questionID", currentQuestion);
         divc.onclick = function () {
-            manageQuestion(divc.id);
+            manageQuestion(divc.getAttribute('questionID'));
         };
         var divc2 = document.createElement("div");
         divc2.classList.add("questionContent");
