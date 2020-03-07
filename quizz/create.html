@@ -367,20 +367,20 @@
             overflow: hidden;
             white-space: nowrap;
         }
+        .quizzDataHolder {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
         .quizzTitleInputHolder {
             float: left;
             width: 70%;
             margin-top: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
         }
         .quizzVisibilityHolder {
             float: left;
             width: 100%;
             margin-right: 10px;
             margin-top: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
         }
         .quizzVisibilityContentHolder {
             color: #000000;
@@ -564,18 +564,20 @@
                                     Edit Quizz Details
                                 </div>
                             </div>
-                            <label class="pure-material-textfield-outlined quizzTitleInputHolder">
-                              <input class="inputHolder" id="quizzTitle" placeholder=" " type="text" required>
-                              <span>Quizz Title</span>
-                            </label>
-                            <div class="quizzVisibilityHolder">
-                                <div class="quizzVisibilityContentHolder">
-                                    Make Quizz Public
-                                </div>
-                                <label class="pure-material-checkbox quizzVisibilityCBHolder">
-                                    <input type="checkbox" id="chAsw1">
-                                    <span>visible</span>
+                            <div class="quizzDataHolder">
+                                <label class="pure-material-textfield-outlined quizzTitleInputHolder">
+                                  <input class="inputHolder" id="quizzTitle" placeholder=" " type="text" required>
+                                  <span>Quizz Title</span>
                                 </label>
+                                <div class="quizzVisibilityHolder">
+                                    <div class="quizzVisibilityContentHolder">
+                                        Make Quizz Public
+                                    </div>
+                                    <label class="pure-material-checkbox quizzVisibilityCBHolder">
+                                        <input type="checkbox" id="chAsw1">
+                                        <span>visible</span>
+                                    </label>
+                                </div>
                             </div>
                         </div>
                     </div>
