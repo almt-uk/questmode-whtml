@@ -636,6 +636,7 @@
         var divc = document.createElement("div");
         divc.classList.add("questionItemHolder");
         divc.id = 'questionItemHolder' + (questionItemsHolder.childElementCount + 1);
+        divc.onclick="printWorking";
         currentQuestion = questionItemsHolder.childElementCount + 1;
         var divc2 = document.createElement("div");
         divc2.classList.add("questionContent");
@@ -643,5 +644,8 @@
         divc.append(divc2);
         questionItemsHolder
             .append(divc);
+    }
+    function manageQuestion(questionNo = -1) {
+        console.log(manageQuestion);
     }
 </script>
