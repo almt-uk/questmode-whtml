@@ -627,6 +627,21 @@
         }
     }
 
+    var questionContent = document.getElementById("questionContent");
+    var questionExp = document.getElementById("questionExp");
+    var questionImageURL = document.getElementById("questionImageURL");
+    var questionAsw1 = document.getElementById("questionAsw1");
+    var questionAsw2 = document.getElementById("questionAsw2");
+    var questionAsw3 = document.getElementById("questionAsw3");
+    var questionAsw4 = document.getElementById("questionAsw4");
+    var chAsw1 = document.getElementById("chAsw1");
+    var chAsw2 = document.getElementById("chAsw2");
+    var chAsw3 = document.getElementById("chAsw3");
+    var chAsw4 = document.getElementById("chAsw4");
+    var timeRead = document.getElementById("timeRead");
+    var timeAnswer = document.getElementById("timeAnswer");
+    var timeView = document.getElementById("timeView");
+
     var currentQuestion = -1;
     var totalQuestions = -1;
 
@@ -670,15 +685,6 @@
     questionAsw3.oninput = function() {
         questions[currentQuestion - 1].answer3 = questionAsw3.value;
     };
-
-    chAsw1.change(function(event) {
-        var checkbox = event.target;
-        if (checkbox.checked) {
-            //Checkbox has been checked
-        } else {
-            //Checkbox has been unchecked
-        }
-    });
 
     questionAsw4.oninput = function() {
         questions[currentQuestion - 1].answer4 = questionAsw4.value;
@@ -729,21 +735,7 @@
     }
     function manageQuestion(questionNo = -1) {
         currentQuestion = questionNo;
-        var questionContent = document.getElementById("questionContent");
-        var questionExp = document.getElementById("questionExp");
-        var questionImageURL = document.getElementById("questionImageURL");
-        var questionAsw1 = document.getElementById("questionAsw1");
-        var questionAsw2 = document.getElementById("questionAsw2");
-        var questionAsw3 = document.getElementById("questionAsw3");
-        var questionAsw4 = document.getElementById("questionAsw4");
-        var chAsw1 = document.getElementById("chAsw1");
-        var chAsw2 = document.getElementById("chAsw2");
-        var chAsw3 = document.getElementById("chAsw3");
-        var chAsw4 = document.getElementById("chAsw4");
-        var timeRead = document.getElementById("timeRead");
-        var timeAnswer = document.getElementById("timeAnswer");
-        var timeView = document.getElementById("timeView");
-        
+
         questionContent.value = questions[questionNo - 1].content;
         questionExp.value = questions[questionNo - 1].experience;
         questionImageURL.value = questions[questionNo - 1].image_url;
