@@ -896,7 +896,14 @@
 
     function publishQuizz()
     {
-        if
+        if (quizzData.title == '')
+        {
+            alert("Quizz Title can not be empty");
+        }
+        else if (questions.length == 0)
+        {
+            alert("You must create some questions in order to publish the quizz");
+        }
         console.log(quizzData, questions);
     }
 
