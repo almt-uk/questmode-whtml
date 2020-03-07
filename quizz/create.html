@@ -518,7 +518,7 @@
                               <span>Question</span>
                             </label>
                             <label class="pure-material-textfield-outlined questionExpHolder">
-                              <input class="inputHolder" id="questionExp" placeholder=" " type="text" required>
+                              <input class="inputHolder" type="number" id="questionExp" placeholder=" " type="text" required>
                               <span>EXP</span>
                             </label>
                         </div>
@@ -533,7 +533,7 @@
                               <input class="inputHolder" id="questionAsw1" placeholder=" " type="text" required>
                               <span>Answer 1</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder">
+                            <label class="pure-material-checkbox answerCBHolder" id="chAsw1">
                                 <input type="checkbox">
                                 <span>Correct</span>
                             </label>
@@ -541,7 +541,7 @@
                               <input class="inputHolder" id="questionAsw2" placeholder=" " type="text" required>
                               <span>Answer 2</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder">
+                            <label class="pure-material-checkbox answerCBHolder" id="chAsw2">
                                 <input type="checkbox">
                                 <span>Correct</span>
                             </label>
@@ -551,7 +551,7 @@
                               <input class="inputHolder" id="questionAsw3" placeholder=" " type="text" required>
                               <span>Answer 3</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder">
+                            <label class="pure-material-checkbox answerCBHolder" id="chAsw3">
                                 <input type="checkbox">
                                 <span>Correct</span>
                             </label>
@@ -559,7 +559,7 @@
                               <input class="inputHolder" id="questionAsw4" placeholder=" " type="text" required>
                               <span>Answer 4</span>
                             </label>
-                            <label class="pure-material-checkbox answerCBHolder">
+                            <label class="pure-material-checkbox answerCBHolder" id="chAsw4">
                                 <input type="checkbox">
                                 <span>Correct</span>
                             </label>
@@ -570,7 +570,7 @@
                                     Time to read question
                                 </div>
                                 <label class="pure-material-textfield-outlined">
-                                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                                  <input class="inputHolder" type="number" id="timeRead" placeholder=" " type="text" required>
                                   <span>time (s)</span>
                                 </label>
                             </div>
@@ -579,7 +579,7 @@
                                     Time to answer
                                 </div>
                                 <label class="pure-material-textfield-outlined">
-                                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                                  <input class="inputHolder" type="number" id="timeAnswer" placeholder=" " type="text" required>
                                   <span>time (s)</span>
                                 </label>
                             </div>
@@ -588,12 +588,9 @@
                                     Time to view results
                                 </div>
                                 <label class="pure-material-textfield-outlined">
-                                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                                  <input class="inputHolder" type="number" id="timeView" placeholder=" " type="text" required>
                                   <span>time (s)</span>
                                 </label>
-                            </div>
-                            <div class="saveQuizzBtn" onclick="saveQuizzInfo()">
-                                Save
                             </div>
                         </div>
                     </div>
@@ -610,11 +607,49 @@
       
 </body>
 <script>
+    var questions = [];
+    class Question {
+        constructor() {
+            this.content = '';
+            this.experience = 5000;
+            this.image_url = '';
+            this.answer1 = '';
+            this.answer2 = '';
+            this.answer3 = '';
+            this.answer4 = '';
+            this.answer1_correct = 0;
+            this.answer2_correct = 0;
+            this.answer3_correct = 0;
+            this.answer4_correct = 0;
+            this.time_question = 5;
+            this.time_answer = 5;
+            this.time_results = 5;
+        }
+    }
+
+    var questionContent = document.getElementById("questionContent");
+    var questionExp = document.getElementById("questionExp");
+    var questionImageURL = document.getElementById("questionImageURL");
+    var questionAsw1 = document.getElementById("questionAsw1");
+    var questionAsw2 = document.getElementById("questionAsw2");
+    var questionAsw3 = document.getElementById("questionAsw3");
+    var questionAsw4 = document.getElementById("questionAsw4");
+    var chAsw1 = document.getElementById("chAsw1");
+    var chAsw2 = document.getElementById("chAsw2");
+    var chAsw3 = document.getElementById("chAsw3");
+    var chAsw4 = document.getElementById("chAsw4");
+    var timeRead = document.getElementById("timeRead");
+    var timeAnswer = document.getElementById("timeAnswer");
+    var timeView = document.getElementById("timeView");
+
     var currentQuestion = -1;
+    var totalQuestions = -1;
+
     addQuestion();
+
     questionContent.oninput = function() {
+        questions[currentQuestion - 1].content = questionContent.value;
         var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
-        
         var children = document.getElementById("questionItemsHolder").childNodes;
         for (var i=0; i<children.length; i++) {
             var child = children[i];
@@ -630,18 +665,92 @@
             }            
         }
     };
+
+    questionExp.oninput = function() {
+        questions[currentQuestion - 1].experience = questionExp.value;
+    };
+
+    questionImageURL.oninput = function() {
+        questions[currentQuestion - 1].image_url = questionImageURL.value;
+    };
+
+    questionAsw1.oninput = function() {
+        questions[currentQuestion - 1].answer1 = questionAsw1.value;
+    };
+
+    questionAsw2.oninput = function() {
+        questions[currentQuestion - 1].answer2 = questionAsw2.value;
+    };
+
+    questionAsw3.oninput = function() {
+        questions[currentQuestion - 1].answer3 = questionAsw3.value;
+    };
+
+    questionAsw4.oninput = function() {
+        questions[currentQuestion - 1].answer4 = questionAsw4.value;
+    };
+
+    timeRead.oninput = function() {
+        var regex = /^[0-9]+$/;
+        if(regex.test(timeRead.value)) {
+            questions[currentQuestion - 1].time_question = timeRead.value;
+        }
+    };
+
+    timeAnswer.oninput = function() {
+        var regex = /^[0-9]+$/;
+        if(regex.test(timeAnswer.value)) {
+            questions[currentQuestion - 1].time_answer = timeAnswer.value;
+        }
+    };
+
+    timeView.oninput = function() {
+        var regex = /^[0-9]+$/;
+        if(regex.test(timeView.value)) {
+            questions[currentQuestion - 1].time_results = timeView.value;
+        }
+    };
+
     function addQuestion()
     {
+        var question = new Question;
+        questions.push(question);
+
         var questionItemsHolder = document.getElementById("questionItemsHolder");
         var divc = document.createElement("div");
         divc.classList.add("questionItemHolder");
         divc.id = 'questionItemHolder' + (questionItemsHolder.childElementCount + 1);
-        currentQuestion = questionItemsHolder.childElementCount + 1;
+        totalQuestions = questionItemsHolder.childElementCount + 1;
+        divc.setAttribute("questionID", totalQuestions);
+        divc.onclick = function () {
+            manageQuestion(divc.getAttribute('questionID'));
+        };
         var divc2 = document.createElement("div");
         divc2.classList.add("questionContent");
         divc2.innerText = "Question";
         divc.append(divc2);
         questionItemsHolder
             .append(divc);
+        manageQuestion(totalQuestions)
+    }
+    function manageQuestion(questionNo = -1) {
+        currentQuestion = questionNo;
+
+        questionContent.value = questions[questionNo - 1].content;
+        questionExp.value = questions[questionNo - 1].experience;
+        questionImageURL.value = questions[questionNo - 1].image_url;
+        questionAsw1.value = questions[questionNo - 1].answer1;
+        questionAsw2.value = questions[questionNo - 1].answer2;
+        questionAsw3.value = questions[questionNo - 1].answer3;
+        questionAsw4.value = questions[questionNo - 1].answer4;
+        chAsw1.checked = questions[questionNo - 1].answer1_correct;
+        chAsw2.checked = questions[questionNo - 1].answer2_correct;
+        chAsw3.checked = questions[questionNo - 1].answer3_correct;
+        chAsw4.checked = questions[questionNo - 1].answer4_correct;
+        timeRead.value = questions[questionNo - 1].time_question;
+        timeAnswer.value = questions[questionNo - 1].time_answer;
+        timeView.value = questions[questionNo - 1].time_results;
+
+        console.log(questions[questionNo - 1]);
     }
 </script>
