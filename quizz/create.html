@@ -654,6 +654,9 @@
 
     function addQuestion()
     {
+        var question = new Question;
+        questions.push(question);
+
         var questionItemsHolder = document.getElementById("questionItemsHolder");
         var divc = document.createElement("div");
         divc.classList.add("questionItemHolder");
@@ -669,13 +672,8 @@
         divc.append(divc2);
         questionItemsHolder
             .append(divc);
-        
-        var question = new Question;
-        questions.push(question);
-        console.log("array size: " + questions.length);
-
     }
     function manageQuestion(questionNo = -1) {
-        console.log(questionNo);
+        console.log(questions[questionNo - 1]);
     }
 </script>
