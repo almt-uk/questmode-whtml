@@ -610,25 +610,7 @@
       
 </body>
 <script>
-    var currentQuestion = -1;
-    addQuestion();
-    questionContent.oninput = function() {
-        var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
-        var children = document.getElementById("questionItemsHolder").childNodes;
-        for (var i=0; i<children.length; i++) {
-            var child = children[i];
-            if (child.id == 'questionItemHolder' + currentQuestion) {
-                if(questionContent.value.length != 0)
-                {
-                    child.childNodes[0].innerText = questionContent.value;
-                }
-                else
-                {
-                    child.childNodes[0].innerText = "Question";
-                }
-            }            
-        }
-    };
+    var questions = [];
     class Question {
         constructor() {
             this.content = '';
@@ -648,6 +630,28 @@
         }
     }
 
+    var currentQuestion = -1;
+
+    addQuestion();
+
+    questionContent.oninput = function() {
+        var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
+        var children = document.getElementById("questionItemsHolder").childNodes;
+        for (var i=0; i<children.length; i++) {
+            var child = children[i];
+            if (child.id == 'questionItemHolder' + currentQuestion) {
+                if(questionContent.value.length != 0)
+                {
+                    child.childNodes[0].innerText = questionContent.value;
+                }
+                else
+                {
+                    child.childNodes[0].innerText = "Question";
+                }
+            }            
+        }
+    };
+
     function addQuestion()
     {
         var questionItemsHolder = document.getElementById("questionItemsHolder");
@@ -665,6 +669,10 @@
         divc.append(divc2);
         questionItemsHolder
             .append(divc);
+        
+        var question = new Question;
+        questions.add(question);
+
     }
     function manageQuestion(questionNo = -1) {
         console.log(questionNo);
