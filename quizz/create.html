@@ -684,6 +684,18 @@
         currentQuestion = questionNo;
         var questionContent = document.getElementById("questionContent")
         questionContent.value = questions[questionNo - 1].content;
+        var questionExp = document.getElementById("questionExp")
+        questionExp.value = questions[questionNo - 1].experience;
+        var questionImageURL = document.getElementById("questionImageURL")
+        questionImageURL.value = questions[questionNo - 1].image_url;
+        var questionAsw1 = document.getElementById("questionAsw1")
+        questionAsw1.value = questions[questionNo - 1].answer1;
+        var questionAsw2 = document.getElementById("questionAsw2")
+        questionAsw2.value = questions[questionNo - 1].answer2;
+        var questionAsw3 = document.getElementById("questionAsw3")
+        questionAsw3.value = questions[questionNo - 1].answer3;
+        var questionAsw4 = document.getElementById("questionAsw4")
+        questionAsw4.value = questions[questionNo - 1].answer4;
 
         console.log(questions[questionNo - 1]);
     }
