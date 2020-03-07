@@ -485,7 +485,7 @@
                         <div class="quizzJoinSubtitle selectable">
                             Manage details such as the waiting time for the questions, picking answers, options chose and the rankings pages
                         </div>
-                        <div class="quizzJoinBtn" onclick="classStats()">
+                        <div class="quizzJoinBtn" onclick="quizzEdit()">
                             Edit
                         </div>
                     </div>
@@ -769,6 +769,11 @@
         }
     };
 
+    function quizzEdit()
+    {
+
+    }
+
     function addQuestion()
     {
         var question = new Question;
@@ -791,6 +796,7 @@
             .append(divc);
         manageQuestion(totalQuestions)
     }
+
     function manageQuestion(questionNo = -1) {
         currentQuestion = questionNo;
 
@@ -816,7 +822,6 @@
         timeRead.value = questions[questionNo - 1].time_question;
         timeAnswer.value = questions[questionNo - 1].time_answer;
         timeView.value = questions[questionNo - 1].time_results;
-
-        console.log(questions[questionNo - 1]);
     }
+
 </script>
