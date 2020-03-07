@@ -610,21 +610,26 @@
       
 </body>
 <script>
+    var currentQuestion = -1;
+    addQuestion();
     questionContent.oninput = function() {
         var questionItemsHolder = document.getElementById("questionItemsHolder").querySelectorAll('questionItemHolder' + currentQuestion);
-        // console.log(questionItemsHolder, 'questionItemHolder' + currentQuestion);
         
         var children = document.getElementById("questionItemsHolder").childNodes;
         for (var i=0; i<children.length; i++) {
             var child = children[i];
             if (child.id == 'questionItemHolder' + currentQuestion) {
-                child.childNodes[0].innerText = questionContent.value;
-                // child.getRootNode
+                if(questionContent.value.length != 0)
+                {
+                    child.childNodes[0].innerText = questionContent.value;
+                }
+                else
+                {
+                    child.childNodes[0].innerText = "Question";
+                }
             }            
         }
     };
-    var currentQuestion = -1;
-    addQuestion();
     function addQuestion()
     {
         var questionItemsHolder = document.getElementById("questionItemsHolder");
