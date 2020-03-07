@@ -894,6 +894,27 @@
         quizzTitle.value = quizzData.title;
     }
 
+    function publishQuizz()
+    {
+        if (quizzData.title == '')
+        {
+            alert("Quizz Title can not be empty");
+        }
+        else if (questions.length == 0)
+        {
+            alert("You must create some questions in order to publish the quizz");
+        }
+        console.log(JSON.stringify(quizzData), JSON.stringify(questions));
+    }
+
+    function saveForLater()
+    {
+        if (quizzData.title == '')
+        {
+            alert("Quizz Title can not be empty");
+        }
+    }
+
     function addQuestion()
     {
         var question = new Question;
