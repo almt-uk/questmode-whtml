@@ -23,6 +23,12 @@
     <script src="../assets/script/cookieConsent.js" type="text/javascript"></script>
   
     <style>
+        /* colors */
+        :root {
+          --pure-material-primary-rgb: 85, 8, 194;
+          --pure-material-onsurface-rgb: 0, 0, 0;
+        }
+        
         /* Body Style */
         body {
             margin: 0;
@@ -180,18 +186,23 @@
             font-size: 25px;
             font-family: 'PT Sans';
             color: rgb(0, 0, 0);
+            margin-bottom: 5px;
         }
         .codeHolder {
-            margin-top: 10px;
+            margin-top: 2px;
             text-align: center;
             font-weight: 900;
             font-size: 17px;
             color: rgb(0, 0, 0);
         }
         .inputHolder {
+            width: 90%;
             font-weight: 900;
             font-size: 18px;
             font-family: 'PT Sans';
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
         }
       
     </style>
