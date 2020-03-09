@@ -99,8 +99,10 @@
             padding-right: 20px;
         }
         .toolbarUserSessionLogIn {
-            float: left;
-            margin-left: 10px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            width: fit-content;
             margin-top: 4px;
             padding-top: 6px;
             margin-bottom: 4px;
@@ -115,7 +117,9 @@
             border-radius: 5px;
         }
         .toolbarUserSessionLogIn:hover {
-            transform: scale(0.9);
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
             background-color: #ececec;
             -moz-box-shadow: inset 0 0 10px #000000;
             -webkit-box-shadow: inset 0 0 10px #000000;
@@ -312,7 +316,7 @@
     <div class="contentHolder">
         <div class="signUpHolder">
             <div class="signUpTitle">
-                Sign Up
+                Log In
             </div>
             <div class="inputHolder">
                 <label class="pure-material-textfield-outlined codeHolder">
@@ -324,18 +328,6 @@
                 <label class="pure-material-textfield-outlined codeHolder">
                   <input class="inputHolder" id="quizzCode" placeholder=" " type="password" required>
                   <span>Password</span>
-                </label>
-            </div>
-            <div class="inputHolder">
-                <label class="pure-material-textfield-outlined codeHolder">
-                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
-                  <span>Username</span>
-                </label>
-            </div>
-            <div class="inputHolder">
-                <label class="pure-material-textfield-outlined codeHolder">
-                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
-                  <span>University</span>
                 </label>
             </div>
             <div class="toolbarUserSessionLogIn" onclick="window.open('user_session/log_in.html', '_self');">
