@@ -174,7 +174,7 @@
                   <span>Nickname</span>
                 </label>
             </div>
-            <div class="quizzCodeBtn" onclick="window.open('quizz/waiting.html', '_self');">
+            <div class="quizzCodeBtn" onclick="checkData();">
                 Join Quizz
             </div>
         </div>
@@ -187,16 +187,19 @@
       
 </body>
 <script>
+    function checkData()
+    {
+        if(document.getElementById("quizzCode").value.length != 0
+            && document.getElementById("quizzNickname").value.length != 0)
+        {
+            document.getElementById("quizzCode").value = "";
+            document.getElementById("quizzNickname").value = "";
+            window.open("quizz/waiting.html", "_self");
+        }
+    }
     $('#quizzNickname').keyup(function (e) {
-        console.log("HERE");
         if (e.keyCode === 13) {
-            if(document.getElementById("quizzCode").value.length != 0
-                && document.getElementById("quizzNickname").value.length != 0)
-            {
-                document.getElementById("quizzCode").value = "";
-                document.getElementById("quizzNickname").value = "";
-                window.open("quizz/waiting.html", "_self");
-            }
+            checkData();
         }
     });
 </script>
