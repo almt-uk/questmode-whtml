@@ -188,6 +188,7 @@
 </body>
 <script>
     $('#quizzCode').keyup(function (e) {
+        console.log("HERE");
         if (e.keyCode === 13) {
             if(document.getElementById("quizzCode").value.length != 0)
             {
@@ -202,14 +203,17 @@
   document.body.addEventListener("click", function (evt) {
       //note evt.target can be a nested element, not the body element, resulting in misfires
       var userLoggedInDetails = document.getElementById("userLoggedInDetails");
-      if(evt.target.classList.contains("userLoggedInPicture")) {
-        if (userLoggedInDetails.classList.contains("hideElement")) {
-          userLoggedInDetails.classList.remove("hideElement");
+      if(userLoggedInDetails != null)
+      {
+        if(evt.target.classList.contains("userLoggedInPicture")) {
+            if (userLoggedInDetails.classList.contains("hideElement")) {
+            userLoggedInDetails.classList.remove("hideElement");
+            } else {
+            userLoggedInDetails.classList.add("hideElement");
+            }
         } else {
-          userLoggedInDetails.classList.add("hideElement");
+            userLoggedInDetails.classList.add("hideElement");
         }
-      } else {
-        userLoggedInDetails.classList.add("hideElement");
       }
   });
 </script>
