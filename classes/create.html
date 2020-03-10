@@ -20,6 +20,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="../assets/style/cookieConsent.css" type="text/css">
     <link rel="stylesheet" href="../assets/style/material.css" type="text/css">
+    <link rel="stylesheet" href="../assets/style/toolbar.css" type="text/css">
     <script src="../assets/script/cookieConsent.js" type="text/javascript"></script>
   
     <style>
@@ -52,111 +53,6 @@
             -moz-box-sizing: border-box; 
             -webkit-box-sizing: border-box; 
             box-sizing: border-box; 
-        }
-
-        /* Toolbar Elements Style */
-        .toolbarHolder {
-            background-color: #ffffff;
-            width: 100%;
-            height: 58px;
-            top: 0;
-            position: fixed;
-            z-index: 11;
-        }
-        .toolbarShadow {
-            box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.671),
-                0 4px 8px 0 rgba(0, 0, 0, 0.19);      
-        }
-        .toolbarContent {
-            display: inline-block;
-            height: 42px;
-            margin-top: 8px;
-            margin-left: 50%;
-            transform: translate(-50%, 0%);
-        }
-        .titleToolbar {
-            float: left;
-            color: #3b3b3b;
-            text-align: center;
-            font-weight: 900;
-            font-size: 27px;
-            font-family: 'PT Sans';
-            padding-left: 10px;
-            padding-top: 3px;
-            -webkit-filter: drop-shadow(0px 0px 1px rgba(0,0,0,0.5));
-            filter: drop-shadow(0px 0px 1px #222);
-        }
-        .titleToolbar:hover {
-            color: #000000;
-            -webkit-filter: drop-shadow(0px 0px 4px rgba(0,0,0,0.5));
-            filter: drop-shadow(0px 0px 4px #000000);
-            cursor: pointer;
-        }
-
-        /* Toolbar User Session Style */
-        .toolbarUserSessionHolder {
-            float: right;
-            width: fit-content;
-            height: 38px;
-            padding: 10px;
-            padding-right: 20px;
-        }
-        .toolbarUserSessionLogIn {
-            float: left;
-            margin-left: 10px;
-            margin-top: 4px;
-            padding-top: 6px;
-            margin-bottom: 4px;
-            padding-bottom: 6px;
-            font-weight: 900;
-            font-size: 16px;
-            padding-left: 18px;
-            padding-right: 18px;
-            font-family: 'PT Sans';
-            color: rgb(0, 0, 0);
-            background-color: #ffffff;
-            border-radius: 5px;
-        }
-        .toolbarUserSessionLogIn:hover {
-            transform: scale(0.9);
-            background-color: #ececec;
-            -moz-box-shadow: inset 0 0 10px #000000;
-            -webkit-box-shadow: inset 0 0 10px #000000;
-            box-shadow: inset 0 0 10px #000000;
-            -webkit-filter: drop-shadow(0px 0px 3px rgba(81, 255, 0, 0.5));
-            filter: drop-shadow(0px 0px 3px rgb(118, 255, 63));
-            cursor: pointer;         
-        }
-        .toolbarUserSessionSignUp {
-            float: left;
-            margin-left: 10px;
-            margin-top: 4px;
-            padding-top: 6px;
-            margin-bottom: 4px;
-            padding-bottom: 6px;
-            font-weight: 900;
-            font-size: 16px;
-            padding-left: 18px;
-            padding-right: 18px;
-            font-family: 'PT Sans';
-            color: rgb(255, 255, 255);
-            background-color: #c50000;
-            -webkit-filter: drop-shadow(0px 0px 4px #8d0000c0);
-            filter: drop-shadow(0px 0px 4px #8d0000be);
-            -moz-box-shadow: inset 0 0 10px #00000083;
-            -webkit-box-shadow: inset 0 0 10px #00000083;
-            box-shadow: inset 0 0 10px #00000083;
-            border-radius: 5px;
-        }
-        .toolbarUserSessionSignUp:hover {
-            transform: scale(0.9);
-            background-color: #ff1d1d;
-            -moz-box-shadow: inset 0 0 10px #000000;
-            -webkit-box-shadow: inset 0 0 10px #000000;
-            box-shadow: inset 0 0 10px #000000;
-            -webkit-filter: drop-shadow(0px 0px 3px rgba(255, 40, 40, 0.5));
-            filter: drop-shadow(0px 0px 3px rgb(255, 88, 88));
-            cursor: pointer;         
         }
 
         /* Website Content Holder */
@@ -296,13 +192,45 @@
             </div>
         </div>
         <div class="toolbarUserSessionHolder">
-            <div class="toolbarUserSessionSignUp">
+            <div class="toolbarUserSessionSignUp" onclick="window.open('../user_session/sign_up.html', '_self');">
                 Sign Up
             </div>
-            <div class="toolbarUserSessionLogIn">
+            <div class="toolbarUserSessionLogIn" onclick="window.open('../user_session/log_in.html', '_self');">
                 Log In
             </div>
         </div>
+        <!-- <div class="userLoggedInHolder">
+          <img class="userLoggedInPicture" src="https://firebasestorage.googleapis.com/v0/b/zeo-flow.appspot.com/o/ProfilePicturesLowQ%2F6jk6xzpHdrwB4kqok4xFDy2HrfobqKJeWRgOE470158261189.jpeg?alt=media" />
+        </div> -->
+    </div>
+
+    <div class="userLoggedInDetails hideElement" id="userLoggedInDetails">
+      <div class="userLoggedInDetailsHolder unselectable">
+        <div class="userLoggedInCover">
+          <img class="userLoggedInPicture2" src="https://firebasestorage.googleapis.com/v0/b/zeo-flow.appspot.com/o/ProfilePicturesLowQ%2F6jk6xzpHdrwB4kqok4xFDy2HrfobqKJeWRgOE470158261189.jpeg?alt=media" />
+          <div class="userLoggedInProfileHolder">
+            <div class="userLoggedInArcShape"></div>
+            <div class="userLoggedInProfileDetails">
+              <div class="userLoggedInViewProfile">
+                View Profile
+              </div>
+            </div>
+          </div>
+          <div class="profileHolder">
+            <div class="userLoggedInOptions">
+              <div class="userLoggedInOptionsItem" onclick="window.open('join_quizz.html', '_self');">
+                Join Quizz
+              </div>
+              <div class="userLoggedInOptionsItem">
+                Help & Support
+              </div>
+              <div class="userLoggedInOptionsItem">
+                Log Out
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   
     <div class="contentHolder unselectable">
@@ -386,4 +314,23 @@
             addStudentJS();
         }
     });
+</script>
+
+<script>
+  document.body.addEventListener("click", function (evt) {
+      //note evt.target can be a nested element, not the body element, resulting in misfires
+      var userLoggedInDetails = document.getElementById("userLoggedInDetails");
+      if(userLoggedInDetails != null)
+      {
+        if(evt.target.classList.contains("userLoggedInPicture")) {
+            if (userLoggedInDetails.classList.contains("hideElement")) {
+            userLoggedInDetails.classList.remove("hideElement");
+            } else {
+            userLoggedInDetails.classList.add("hideElement");
+            }
+        } else {
+            userLoggedInDetails.classList.add("hideElement");
+        }
+      }
+  });
 </script>
