@@ -261,6 +261,31 @@
             <div class="toolbarUserSessionSignUp">
                 Sign Up
             </div>
+            <script type="text/javascript">
+                function tryRegister() {
+                    var emailData = document.getElementById("emailData").value;
+                    var passwordData = document.getElementById("passwordData").value;
+                    var usernameData = document.getElementById("usernameData").value;
+                    var universityData = document.getElementById("universityData").value;
+                    if(emailData.length != 0 && passwordData.length != 0 && usernameData.length != 0
+                        && universityData.length != 0)
+                    {
+                        $.ajax({
+                            type: 'post',
+                            data: {
+                                register: true,
+                                emailData: emailData,
+                                passwordData: passwordData,
+                                usernameData: usernameData,
+                                universityData: universityData
+                            },
+                            success: function(response){
+                                window.open("/" + response,"_self");
+                            }
+                        });                        
+                    }
+                };
+            </script>
         </div>
     </div>
 
