@@ -1,7 +1,6 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Log In to your ZeoFlow Account.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Quest</title>
   
@@ -541,13 +540,45 @@
             </a>
         </div>
         <div class="toolbarUserSessionHolder">
-            <div class="toolbarUserSessionSignUp">
+            <div class="toolbarUserSessionSignUp" onclick="window.open('../user_session/sign_up.html', '_self');">
                 Sign Up
             </div>
-            <div class="toolbarUserSessionLogIn">
+            <div class="toolbarUserSessionLogIn" onclick="window.open('../user_session/log_in.html', '_self');">
                 Log In
             </div>
         </div>
+        <!-- <div class="userLoggedInHolder">
+          <img class="userLoggedInPicture" src="https://firebasestorage.googleapis.com/v0/b/zeo-flow.appspot.com/o/ProfilePicturesLowQ%2F6jk6xzpHdrwB4kqok4xFDy2HrfobqKJeWRgOE470158261189.jpeg?alt=media" />
+        </div> -->
+    </div>
+
+    <div class="userLoggedInDetails hideElement" id="userLoggedInDetails">
+      <div class="userLoggedInDetailsHolder unselectable">
+        <div class="userLoggedInCover">
+          <img class="userLoggedInPicture2" src="https://firebasestorage.googleapis.com/v0/b/zeo-flow.appspot.com/o/ProfilePicturesLowQ%2F6jk6xzpHdrwB4kqok4xFDy2HrfobqKJeWRgOE470158261189.jpeg?alt=media" />
+          <div class="userLoggedInProfileHolder">
+            <div class="userLoggedInArcShape"></div>
+            <div class="userLoggedInProfileDetails">
+              <div class="userLoggedInViewProfile">
+                View Profile
+              </div>
+            </div>
+          </div>
+          <div class="profileHolder">
+            <div class="userLoggedInOptions">
+              <div class="userLoggedInOptionsItem" onclick="window.open('join_quizz.html', '_self');">
+                Join Quizz
+              </div>
+              <div class="userLoggedInOptionsItem">
+                Help & Support
+              </div>
+              <div class="userLoggedInOptionsItem">
+                Log Out
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   
     <div class="contentHolder unselectable">
@@ -984,4 +1015,23 @@
         timeView.value = questions[questionNo - 1].time_results;
     }
 
+</script>
+
+<script>
+  document.body.addEventListener("click", function (evt) {
+      //note evt.target can be a nested element, not the body element, resulting in misfires
+      var userLoggedInDetails = document.getElementById("userLoggedInDetails");
+      if(userLoggedInDetails != null)
+      {
+        if(evt.target.classList.contains("userLoggedInPicture")) {
+            if (userLoggedInDetails.classList.contains("hideElement")) {
+            userLoggedInDetails.classList.remove("hideElement");
+            } else {
+            userLoggedInDetails.classList.add("hideElement");
+            }
+        } else {
+            userLoggedInDetails.classList.add("hideElement");
+        }
+      }
+  });
 </script>
