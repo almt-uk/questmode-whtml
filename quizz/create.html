@@ -841,6 +841,20 @@
         {
             alert("You must create some questions in order to publish the quizz");
         }
+        else
+        {
+            $.ajax({
+                type: 'post',
+                data: {
+                    create_quizz: true,
+                    quizzData: JSON.stringify(quizzData),
+                    questions: JSON.stringify(questions)
+                },
+                success: function(response){
+                    alert("Quizz Created");
+                }
+            }); 
+        }
         console.log(JSON.stringify(quizzData), JSON.stringify(questions));
     }
 
