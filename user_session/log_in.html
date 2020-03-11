@@ -264,6 +264,26 @@
             <div class="forgotPassword">
                 Forgotten your details? <b><a href="help_sign_in.html">Get help signing in.</a></b>
             </div>
+            <script type="text/javascript">
+                function tryRegister() {
+                    var emailData = document.getElementById("emailData").value;
+                    var passwordData = document.getElementById("passwordData").value;
+                    if(emailData.length != 0 && passwordData.length != 0)
+                    {
+                        $.ajax({
+                            type: 'post',
+                            data: {
+                                register: true,
+                                emailData: emailData,
+                                passwordData: passwordData
+                            },
+                            success: function(response){
+                                window.open("/" + response,"_self");
+                            }
+                        });                        
+                    }
+                };
+            </script>
         </div>
     </div>
 
