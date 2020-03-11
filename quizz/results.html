@@ -23,7 +23,7 @@
     <script src="../assets/script/cookieConsent.js" type="text/javascript"></script>
   
     <style>        
-        /* Body Style Style */
+        /* Body Style */
         body {
             margin: 0;
             background-color: #f5f5f5;
@@ -72,7 +72,10 @@
             position: relative;
             top: 50%;
             transform: translateY(-50%);
-            background-color: rgb(0, 61, 25);
+            background: linear-gradient(135deg, #d30935, #eea406);
+            background-size: 400% 400%;
+            -webkit-animation: gradientBG 6s ease infinite;
+            animation: gradientBG 6s ease infinite;
             -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 10px #222);
             float: left;
@@ -112,7 +115,7 @@
             font-weight: 900;
             font-size: 40px;
             text-align: center;
-            text-shadow: 2px 0 rgb(2, 53, 36);
+            text-shadow: 2px 0 rgb(0, 0, 0);
             -webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 2px #222);
             letter-spacing: 0px;
@@ -122,7 +125,7 @@
             -webkit-box-shadow: inset 0 0 5px #000000;
             box-shadow: inset 0 0 5px #000000;
             border: 10px solid rgba(0, 0, 0, 0.418);
-            background-color: #05923a;
+            background-color: #0000003d;
         }
         .percentResult {
             -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
@@ -137,7 +140,7 @@
             top: 2px;
             transform: perspective(1px) translateX(-50%);
             font-family: 'PT Sans';
-            color: rgba(206, 255, 126, 0.726);
+            color: rgba(255, 255, 255, 0.726);
             font-weight: 900;
             font-size: 40px;
             text-align: center;
