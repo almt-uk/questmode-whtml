@@ -514,7 +514,7 @@
     student.user_id = 13234325;
     student.experience = 1272;
     student.username = "michael";
-    student.email = "3126153@my.northampton.ac.uk";
+    student.email = "michael@my.northampton.ac.uk";
     var quizzes = [];
     var quizzGame = new QuizzGame;
     quizzGame.experience = 123;
@@ -536,7 +536,29 @@
     student.user_id = 124342;
     student.experience = 1242;
     student.username = "teo";
-    student.email = "3126153@my.northampton.ac.uk";
+    student.email = "teodor@my.northampton.ac.uk";
+    var quizzes = [];
+    var quizzGame = new QuizzGame;
+    quizzGame.experience = 123;
+    quizzGame.answers_good = 6;
+    quizzGame.total_answers = 10;
+    quizzes.push(quizzGame);
+    quizzGame.experience = 242;
+    quizzGame.answers_good = 3;
+    quizzGame.total_answers = 13;
+    quizzes.push(quizzGame);
+    quizzGame.experience = 4563;
+    quizzGame.answers_good = 12;
+    quizzGame.total_answers = 13;
+    quizzes.push(quizzGame);
+    student.quizzes_played = quizzes;
+    students.push(student);
+
+    student = new Student;
+    student.user_id = 1241245235;
+    student.experience = 1256;
+    student.username = "luke";
+    student.email = "luke@my.northampton.ac.uk";
     var quizzes = [];
     var quizzGame = new QuizzGame;
     quizzGame.experience = 123;
@@ -558,7 +580,6 @@
     function addStudents()
     {
         students.forEach(student => {
-            console.log(student.username);
             var studentsHolderPack = document.getElementById("studentsHolderPack");
             var divc = document.createElement("div");
             divc.classList.add("studentsHolder");
@@ -606,8 +627,8 @@
     }
     function studentStats(studentId)
     {
-        document.getElementById("studentTitle").innerText = students[studentId].email;
-        document.getElementById("studentSubtitle").innerText = students[studentId].username;
+        document.getElementById("studentSubtitle").innerText = students[studentId].email;
+        document.getElementById("studentTitle").innerText = students[studentId].username + " (Exp: " + students[studentId].experience + ")";
         if(!classStatsHolder.classList.contains("hideElement"))
         {
             classStatsHolder.classList.add("hideElement");
