@@ -69,6 +69,9 @@
         }
         .resultsHolder {
             width: 50%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
             background-color: rgb(0, 61, 25);
             -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 10px #222);
@@ -192,9 +195,9 @@
             -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 5px #222);
             position: relative;
-            top: 20px;
-            left: 32%;
-            transform: perspective(1px) translateX(-68%);
+            top: 10px;
+            left: 50%;
+            transform: perspective(1px) translateX(-50%);
             z-index: 1;
         }
         .countdownTime {
@@ -250,7 +253,13 @@
                         </div>
                     </div>
                 </div>
-
+                <a href="../index.html">
+                    <div class="countdownHolder unselectable" id="countdownHolder">
+                        <div class="countdownTime" id="countdownTime">
+                            Done
+                        </div>
+                    </div>
+                </a>
             </div>
             <div class="gainExpHolder resultFrame">
                 <div class="expGainedHolder">
@@ -259,13 +268,6 @@
             </div>
         </div>
     </div>
-    <a href="../index.html">
-        <div class="countdownHolder unselectable" id="countdownHolder">
-            <div class="countdownTime" id="countdownTime">
-                Done
-            </div>
-        </div>
-    </a>
 
     <div id="myCookieConsent">
         <a id="cookieButton">Understood</a>
