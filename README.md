@@ -25,7 +25,7 @@ https://almt-uk.github.io/questmode-whtml/quizz/pick_answer.html
 https://almt-uk.github.io/questmode-whtml/quizz/answer_result.html
 <br>
 *rankings*
-https://almt-uk.github.io/questmode-whtml/quizz/rankings.html
+https://almt-uk.github.io/questmode-whtml/quizz/results.html
 <br>
 *results*
 https://almt-uk.github.io/questmode-whtml/quizz/results.html
