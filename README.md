@@ -28,7 +28,7 @@ https://almt-uk.github.io/questmode-whtml/quizz/answer_result.html
 https://almt-uk.github.io/questmode-whtml/quizz/results.html
 <br>
 *results*
-https://almt-uk.github.io/questmode-whtml/quizz/results.html
+https://questmode.000webhostapp.com/quizz/ranks
 <br>
 *create class*
 https://almt-uk.github.io/questmode-whtml/classes/create.html
