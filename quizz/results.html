@@ -23,7 +23,7 @@
     <script src="../assets/script/cookieConsent.js" type="text/javascript"></script>
   
     <style>        
-        /* Body Style Style */
+        /* Body Style */
         body {
             margin: 0;
             background-color: #f5f5f5;
@@ -67,11 +67,25 @@
             transform: perspective(1px) translateY(-60%) translateX(-50%);
             height: 70vh;
         }
+        .resultsHolder {
+            width: 50%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            background: linear-gradient(135deg, #d30935, #eea406);
+            background-size: 400% 400%;
+            -webkit-animation: gradientBG 6s ease infinite;
+            animation: gradientBG 6s ease infinite;
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 10px #222);
+            float: left;
+            border-radius: 10px;
+        }
         .resultOption {
             position: relative;
             left: 50%;
             transform: perspective(1px) translateX(-50%);
-            width: 50%;
+            width: 100%;
             height: 100px;
             padding: 10px;
         }
@@ -97,11 +111,11 @@
             top: -20px;
             transform: perspective(1px) translateX(-50%);
             font-family: 'PT Sans';
-            color: rgb(2, 53, 36);
+            color: rgb(255, 255, 255);
             font-weight: 900;
             font-size: 40px;
             text-align: center;
-            text-shadow: 2px 0 rgb(2, 53, 36);
+            text-shadow: 2px 0 rgb(0, 0, 0);
             -webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 2px #222);
             letter-spacing: 0px;
@@ -111,7 +125,7 @@
             -webkit-box-shadow: inset 0 0 5px #000000;
             box-shadow: inset 0 0 5px #000000;
             border: 10px solid rgba(0, 0, 0, 0.418);
-            background-color: #05923a;
+            background-color: #0000003d;
         }
         .percentResult {
             -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
@@ -126,15 +140,38 @@
             top: 2px;
             transform: perspective(1px) translateX(-50%);
             font-family: 'PT Sans';
-            color: rgb(2, 53, 36);
+            color: rgba(255, 255, 255, 0.726);
             font-weight: 900;
             font-size: 40px;
             text-align: center;
-            text-shadow: 2px 0 rgb(2, 53, 36);
             -webkit-filter: drop-shadow(0px 0px 2px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 2px #222);
             letter-spacing: 0px;
         }
+
+        @-webkit-keyframes gradientBG {
+            0% {
+            background-position: 4% 50%;
+            }
+            50% {
+            background-position: 96% 50%;
+            }
+            100% {
+            background-position: 4% 50%;
+            }
+        }
+        @keyframes gradientBG {
+            0% {
+            background-position: 4% 50%;
+            }
+            50% {
+            background-position: 96% 50%;
+            }
+            100% {
+            background-position: 4% 50%;
+            }
+        }
+
         /* Countdown Style */
         .countdownHolder {
             width: 90px;
@@ -144,10 +181,16 @@
             -webkit-filter: drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 5px #222);
             position: relative;
-            top: 20px;
+            top: 10px;
             left: 50%;
             transform: perspective(1px) translateX(-50%);
             z-index: 1;
+        }
+        .countdownHolder:hover {
+            position: relative;
+            top: 10px;
+            left: 50%;
+            transform: perspective(1px) translateX(-50%) scale(0.9);
         }
         .countdownTime {
             text-align: center;
@@ -160,6 +203,145 @@
             font-size: 34px;
             color: rgb(255, 255, 255);
         }
+
+        /* Exp Gained Holder */
+        .gainExpHolder {
+            width: 47%;
+            position: relative;
+            top: 50%;
+            transform: translateY(-50%);
+            margin-left: 3%;
+            background: linear-gradient(135deg, #bb09d3, #f07510);
+            background-size: 400% 400%;
+            -webkit-animation: gradientBG 6s ease infinite;
+            animation: gradientBG 6s ease infinite;
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 10px #222);
+            float: left;
+            border-radius: 10px;
+        }
+        .expGainedHolder {
+            padding-top: 10px;
+        }
+        .expGainedHolderExtra {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .expGainedTitle {
+            text-align: center;
+            font-family: 'PT Sans';
+            font-weight: 900;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            -webkit-filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 6px #222);
+        }
+        .expGainedContent {
+            text-align: center;
+            font-family: 'PT Sans';
+            text-shadow: 0px 1px, 1px 0px, 1px 1px;
+            font-weight: 900;
+            font-size: 30px;
+            color: rgb(255, 255, 255);
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 10px #222);
+        }
+
+        /* User Holder */
+        .notLoggedIn {
+            margin-top: 10px;
+        }
+        .userSessionHolder {
+            float: left;
+            width: 50%;
+        }
+        .logInHolder, .signUpHolder {
+            width: fit-content;
+            font-family: 'PT Sans';
+            font-weight: 900;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 10px #222);
+            background-color: #00000042;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 5px;
+        }
+        .logInHolder {
+            position: relative;
+            left: 70%;
+            transform: translateX(-50%);
+        }
+        .signUpHolder {
+            position: relative;
+            left: 30%;
+            transform: translateX(-50%);
+        }
+        .logInHolder:hover {
+            position: relative;
+            left: 70%;
+            transform: translateX(-50%) scale(0.9);
+            cursor: pointer;
+            -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 20px #222);
+            background-color: #1f58047a;
+        }
+        .signUpHolder:hover {
+            position: relative;
+            left: 30%;
+            transform: translateX(-50%) scale(0.9);
+            cursor: pointer;
+            -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 20px #222);
+            background-color: #5804047a;
+        }
+        .contentSessionHolder {
+            font-family: 'PT Sans';
+            font-weight: 900;
+            font-size: 16px;
+            color: rgb(255, 255, 255);
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 10px #222);
+            margin-top: 55px;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        /* Hero Picker Style */
+        .heroClassesHolder {
+            position: relative;
+            left: 50%;
+            width: fit-content;
+            margin-bottom: -300px;
+            transform: translateX(-50%);
+        }
+        .heroClassHolder {
+            float: left;
+            background-color: #d3d3d3be;
+            width: 90px;
+            height: 90px;
+            margin: 5px;
+            border-radius: 50%;
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .heroClassHolder:hover {
+            cursor: pointer;
+            position: relative;
+            transform: scale(0.9);
+            cursor: pointer;
+            -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 20px #222);
+        }
+        .heroClassImg {
+            border-radius: 50%;
+            width: 90px;
+            height: 90px;
+            background-image: radial-gradient(#cecece, #ffffff);
+        }
       
     </style>
   
@@ -168,48 +350,86 @@
   
     <div class="contentHolder unselectable">
         <div class="resultHolder" id="resultHolder">
-            <div class="resultOption">
-                <div class="resultOptionHolder resultFrame">
-                    <div class="percentResultNo">
-                        1. Name 134657
+            <div class="resultsHolder">
+                <div class="resultOption">
+                    <div class="resultOptionHolder resultFrame">
+                        <div class="percentResultNo">
+                            1. Name 134657
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder resultFrame">
-                    <div class="percentResultNo">
-                        2. Name 21212124
+                <div class="resultOption">
+                    <div class="resultOptionHolder resultFrame">
+                        <div class="percentResultNo">
+                            2. Name 21212124
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder resultFrame">
-                    <div class="percentResultNo">
-                        3. Name 534637
+                <div class="resultOption">
+                    <div class="resultOptionHolder resultFrame">
+                        <div class="percentResultNo">
+                            3. Name 534637
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="resultOptionMore">
-                <div class="resultMoreText">
-                    .....
+                <div class="resultOptionMore">
+                    <div class="resultMoreText">
+                        .....
+                    </div>
                 </div>
+                <div class="resultOption">
+                    <div class="resultOptionHolder resultFrame">
+                        <div class="percentResultNo">
+                            5. Name 32676
+                        </div>
+                    </div>
+                </div>
+                <a href="../index.html">
+                    <div class="countdownHolder unselectable" id="countdownHolder">
+                        <div class="countdownTime" id="countdownTime">
+                            Done
+                        </div>
+                    </div>
+                </a>
             </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder resultFrame">
-                    <div class="percentResultNo">
-                        5. Name 32676
+            <div class="gainExpHolder resultFrame">
+                <div class="expGainedHolder">
+                    <div class="expGainedTitle">
+                        You have gained
+                    </div>
+                    <div class="expGainedContent">
+                        2918 EXP
+                    </div>
+                </div>
+                <div class="notLoggedIn">
+                    <div class="userSessionHolder">
+                        <div class="logInHolder">
+                            Log In
+                        </div>
+                    </div>
+                    <div class="userSessionHolder">
+                        <div class="signUpHolder">
+                            Sign Up
+                        </div>
+                    </div>
+                </div>
+                <div class="contentSessionHolder">
+                    in order to increase the exp for your character:
+                </div>
+                <div class="heroClassesHolder">
+                    <div class="heroClassHolder">
+                        <img class="heroClassImg"/>
+                    </div>
+                    <div class="heroClassHolder">
+                        <img class="heroClassImg"/>
+                    </div>
+                    <div class="heroClassHolder">
+                        <img class="heroClassImg"/>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <a href="../index.html">
-        <div class="countdownHolder unselectable" id="countdownHolder">
-            <div class="countdownTime" id="countdownTime">
-                Done
-            </div>
-        </div>
-    </a>
 
     <div id="myCookieConsent">
         <a id="cookieButton">Understood</a>

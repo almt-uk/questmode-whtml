@@ -194,7 +194,10 @@
         }
         /* Answers Subholder Style */
         .answerOption1 {
-            background-color: #E91E63;
+            background: linear-gradient(135deg, #E91E63, rgb(170, 4, 120));
+            background-size: 400% 400%;
+            -webkit-animation: gradientBG 6s ease infinite;
+            animation: gradientBG 6s ease infinite;
         }
         .answerOption2 {
             background-color: #9C27B0;
@@ -204,6 +207,29 @@
         }
         .answerOption4 {
             background-color: #FF9800;
+        }
+
+        @-webkit-keyframes gradientBG {
+            0% {
+            background-position: 4% 50%;
+            }
+            50% {
+            background-position: 96% 50%;
+            }
+            100% {
+            background-position: 4% 50%;
+            }
+        }
+        @keyframes gradientBG {
+            0% {
+            background-position: 4% 50%;
+            }
+            50% {
+            background-position: 96% 50%;
+            }
+            100% {
+            background-position: 4% 50%;
+            }
         }
       
     </style>

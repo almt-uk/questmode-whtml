@@ -234,7 +234,7 @@
       
 </body>
 <script>
-    var time = 12;
+    var time = 5;
     var choice = 0;
     document.getElementById("countdownTime").innerHTML = time + "s";
     setInterval(function() {
@@ -265,5 +265,15 @@
             countdownHolder.classList.add("answerChose");
         }
         choice = answer;
+        $.ajax({
+                type: 'post',
+                data: {
+                    pick_answer: true,
+                    answer: choice
+                },
+                success: function(response){
+                    
+                }
+            }); 
     }
 </script>
