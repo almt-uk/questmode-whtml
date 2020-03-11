@@ -438,6 +438,9 @@
                         <div class="addStudentBtn" onclick="addStudent()">
                             Add Student
                         </div>
+                        <div class="studentsHolderPack" id="studentsHolderPack">
+                            
+                        </div>
                         <div class="studentsHolder" onclick="studentStats(12)">
                             <div class="studentName">
                                 Name 125235
@@ -609,6 +612,66 @@
       
 </body>
 <script>
+    class QuizzGame {
+        constructor() {
+            this.experience = 0;
+            this.answers_good = 0;
+            this.total_answers = 0;
+        }
+    }
+    var students = [];
+    class Student {
+        constructor() {
+            this.user_id = 0;
+            this.experience = 0;
+            this.username = '';
+            this.email = '';
+            this.quizzes_played = new Array();
+        }
+    }
+
+    var student = new Student;
+    student.user_id = 13234325;
+    student.experience = 1272;
+    student.username = "username312743";
+    student.email = "3126153@my.northampton.ac.uk";
+    var quizzes = [];
+    var quizzGame = new QuizzGame;
+    quizzGame.experience = 123;
+    quizzGame.answers_good = 6;
+    quizzGame.total_answers = 10;
+    quizzes.push(quizzGame);
+    quizzGame.experience = 242;
+    quizzGame.answers_good = 3;
+    quizzGame.total_answers = 13;
+    quizzes.push(quizzGame);
+    quizzGame.experience = 4563;
+    quizzGame.answers_good = 12;
+    quizzGame.total_answers = 13;
+    quizzes.push(quizzGame);
+    student.quizzes_played = quizzes;
+
+    function addStudents()
+    {
+
+        var questionItemsHolder = document.getElementById("questionItemsHolder");
+        var divc = document.createElement("div");
+        divc.classList.add("questionItemHolder");
+        divc.id = 'questionItemHolder' + (questionItemsHolder.childElementCount + 1);
+        totalQuestions = questionItemsHolder.childElementCount + 1;
+        divc.setAttribute("questionID", totalQuestions);
+        divc.onclick = function () {
+            manageQuestion(divc.getAttribute('questionID'));
+        };
+        var divc2 = document.createElement("div");
+        divc2.classList.add("questionContent");
+        divc2.innerText = "Question";
+        divc.append(divc2);
+        questionItemsHolder
+            .append(divc);
+        manageQuestion(totalQuestions)
+    }
+
     var classStatsHolder = document.getElementById("classStatsHolder");
     var studentStatsHolder = document.getElementById("studentStatsHolder");
     var addStudentHolder = document.getElementById("addStudentHolder");
