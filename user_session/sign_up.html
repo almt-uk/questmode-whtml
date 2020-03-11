@@ -201,8 +201,17 @@
             font-size: 17px;
             color: rgb(0, 0, 0);
         }
+        .inputRow {
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            float: left;
+            width: fit-content;
+            background-color: aqua;
+        }
         .inputFormHolder {
             float: left;
+            margin: 3px;
         }
         .inputHolder {
             width: 90%;
@@ -212,9 +221,6 @@
             position: relative;
             left: 50%;
             transform: translateX(-50%);
-        }
-        .inputRow {
-            width: 100%;
         }
       
     </style>
@@ -241,13 +247,13 @@
                 Sign Up
             </div>
             <div class="inputRow">
-                <div class="inputHolder">
+                <div class="inputFormHolder">
                     <label class="pure-material-textfield-outlined codeHolder">
                       <input class="inputHolder" id="quizzCode" placeholder=" " type="email" required>
                       <span>Email</span>
                     </label>
                 </div>
-                <div class="inputHolder">
+                <div class="inputFormHolder">
                     <label class="pure-material-textfield-outlined codeHolder">
                       <input class="inputHolder" id="quizzCode" placeholder=" " type="password" required>
                       <span>Password</span>
@@ -255,13 +261,13 @@
                 </div>                
             </div>
             <div class="inputRow">
-                <div class="inputHolder">
+                <div class="inputFormHolder">
                     <label class="pure-material-textfield-outlined codeHolder">
                       <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
                       <span>Username</span>
                     </label>
                 </div>
-                <div class="inputHolder">
+                <div class="inputFormHolder">
                     <label class="pure-material-textfield-outlined codeHolder">
                       <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
                       <span>University</span>
