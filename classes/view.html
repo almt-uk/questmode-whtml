@@ -553,38 +553,31 @@
     quizzes.push(quizzGame);
     student.quizzes_played = quizzes;
     students.push(student);
-    students.push(student);
-    students.push(student);
-    students.push(student);
 
     addStudents();
-    // addStudents(1);
-    // addStudents(2);
     function addStudents()
     {
-
-        for(var i=0; i<students.length; i++)
-        {
+        students.forEach(student => {
+            console.log(student.username);
             var studentsHolderPack = document.getElementById("studentsHolderPack");
             var divc = document.createElement("div");
             divc.classList.add("studentsHolder");
             divc.id = 'studentsHolder' + (studentsHolderPack.childElementCount + 1);
-            totalQuestions = studentsHolderPack.childElementCount + 1;
-            divc.setAttribute("studentID", totalQuestions);
-            var divc2 = document.createElement("div");
-            divc2.classList.add("studentName");
-            divc2.innerText = students[i].username;
-            divc.append(divc2);
-            var divc2 = document.createElement("div");
-            divc2.classList.add("classPeopleNo");
-            divc2.innerText = "Exp: " + students[i].experience;
-            divc.append(divc2);
+            divc.setAttribute("studentID", (studentsHolderPack.childElementCount + 1));
             divc.onclick = function () {
                 onClickStudents(divc.getAttribute('studentID'));
             };
+            var divc2 = document.createElement("div");
+            divc2.classList.add("studentName");
+            divc2.innerText = student.username;
+            divc.append(divc2);
+            var divc2 = document.createElement("div");
+            divc2.classList.add("classPeopleNo");
+            divc2.innerText = "Exp: " + student.experience;
+            divc.append(divc2);
             studentsHolderPack
                 .append(divc);
-        }
+        });
         
     }
     function onClickStudents(studentNo)
