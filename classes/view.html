@@ -658,10 +658,7 @@
         document.getElementById("studentSubtitle").innerText = students[studentId].email;
         document.getElementById("studentTitle").innerText = students[studentId].username + " (Exp: " + students[studentId].experience + ")";
         var studentsStats = document.getElementById("studentsStats");
-        if(studentsStats.childElementCount > 0)
-        {
-            
-        }
+        
         students[studentId].quizzes_played.forEach(quizz => {
             var divc = document.createElement("div");
             divc.classList.add("barOutliner");
