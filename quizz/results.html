@@ -196,6 +196,7 @@
             color: rgb(255, 255, 255);
         }
 
+        /* Exp Gained Holder */
         .gainExpHolder {
             width: 47%;
             position: relative;
@@ -221,14 +222,21 @@
             font-weight: 900;
             font-size: 20px;
             color: rgb(255, 255, 255);
+            -webkit-filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 6px #222);
         }
         .expGainedContent {
             text-align: center;
             font-family: 'PT Sans';
             text-shadow: 0px 1px, 1px 0px, 1px 1px;
             font-weight: 900;
-            font-size: 34px;
+            font-size: 30px;
             color: rgb(255, 255, 255);
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.774));
+            filter: drop-shadow(0px 0px 10px #222);
+        }
+        .notLoggedIn {
+
         }
       
     </style>
@@ -288,6 +296,9 @@
                     <div class="expGainedContent">
                         2918 EXP
                     </div>
+                </div>
+                <div class="userHolder notLoggedIn">
+
                 </div>
             </div>
         </div>
