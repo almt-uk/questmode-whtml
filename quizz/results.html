@@ -67,11 +67,19 @@
             transform: perspective(1px) translateY(-60%) translateX(-50%);
             height: 70vh;
         }
+        .resultsHolder {
+            width: 50%;
+            background-color: rgb(0, 61, 25);
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 10px #222);
+            float: left;
+            border-radius: 10px;
+        }
         .resultOption {
             position: relative;
             left: 50%;
             transform: perspective(1px) translateX(-50%);
-            width: 50%;
+            width: 100%;
             height: 100px;
             padding: 10px;
         }
@@ -135,6 +143,17 @@
             filter: drop-shadow(0px 0px 2px #222);
             letter-spacing: 0px;
         }
+        .gainExpHolder {
+            width: 47%;
+            height: 40%;
+            margin-left: 3%;
+            background-color: rgb(0, 61, 25);
+            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
+            filter: drop-shadow(0px 0px 10px #222);
+            float: left;
+            border-radius: 10px;
+        }
+
         /* Countdown Style */
         .countdownHolder {
             width: 90px;
@@ -145,8 +164,8 @@
             filter: drop-shadow(0px 0px 5px #222);
             position: relative;
             top: 20px;
-            left: 50%;
-            transform: perspective(1px) translateX(-50%);
+            left: 32%;
+            transform: perspective(1px) translateX(-68%);
             z-index: 1;
         }
         .countdownTime {
@@ -168,38 +187,44 @@
   
     <div class="contentHolder unselectable">
         <div class="resultHolder" id="resultHolder">
-            <div class="resultOption">
-                <div class="resultOptionHolder resultFrame">
-                    <div class="percentResultNo">
-                        1. Name 134657
+            <div class="resultsHolder">
+                <div class="resultOption">
+                    <div class="resultOptionHolder resultFrame">
+                        <div class="percentResultNo">
+                            1. Name 134657
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder resultFrame">
-                    <div class="percentResultNo">
-                        2. Name 21212124
+                <div class="resultOption">
+                    <div class="resultOptionHolder resultFrame">
+                        <div class="percentResultNo">
+                            2. Name 21212124
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder resultFrame">
-                    <div class="percentResultNo">
-                        3. Name 534637
+                <div class="resultOption">
+                    <div class="resultOptionHolder resultFrame">
+                        <div class="percentResultNo">
+                            3. Name 534637
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="resultOptionMore">
-                <div class="resultMoreText">
-                    .....
-                </div>
-            </div>
-            <div class="resultOption">
-                <div class="resultOptionHolder resultFrame">
-                    <div class="percentResultNo">
-                        5. Name 32676
+                <div class="resultOptionMore">
+                    <div class="resultMoreText">
+                        .....
                     </div>
                 </div>
+                <div class="resultOption">
+                    <div class="resultOptionHolder resultFrame">
+                        <div class="percentResultNo">
+                            5. Name 32676
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="gainExpHolder">
+                hdhdh
             </div>
         </div>
     </div>
