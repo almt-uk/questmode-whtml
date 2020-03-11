@@ -221,9 +221,19 @@
         if(document.getElementById("quizzCode").value.length != 0
             && document.getElementById("quizzNickname").value.length != 0)
         {
+            $.ajax({
+                type: 'post',
+                data: {
+                    joinQuizz: true,
+                    quizzCode: document.getElementById("quizzCode").value,
+                    quizzNickname: document.getElementById("quizzNickname").value
+                },
+                success: function(response){
+                  
+                }
+            });
             document.getElementById("quizzCode").value = "";
             document.getElementById("quizzNickname").value = "";
-            window.open("quizz/waiting.html", "_self");
         }
     }
     $('#quizzNickname').keyup(function (e) {
