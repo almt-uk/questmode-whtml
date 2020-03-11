@@ -135,7 +135,7 @@
 
         /* Sign Up Holder Style */
         .signUpHolder {
-            width: 400px;
+            width: 800px;
             background-color: rgb(236, 236, 236);
             font-family: 'PT Sans';
             color: rgb(0, 0, 0);
@@ -149,31 +149,6 @@
             border-radius: 20px;
             -webkit-filter: drop-shadow(0px 0px 7px rgba(0,0,0,0.5));
             filter: drop-shadow(0px 0px 7px #222);
-        }
-        .signUpTitle {
-            text-align: center;
-            font-weight: 900;
-            font-size: 25px;
-            font-family: 'PT Sans';
-            color: rgb(0, 0, 0);
-            margin-bottom: 5px;
-        }
-        .codeHolder {
-            width: 100%;
-            margin-top: 2px;
-            text-align: center;
-            font-weight: 900;
-            font-size: 17px;
-            color: rgb(0, 0, 0);
-        }
-        .inputHolder {
-            width: 90%;
-            font-weight: 900;
-            font-size: 18px;
-            font-family: 'PT Sans';
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
         }
         .toolbarUserSessionSignUp {
             position: relative;
@@ -210,6 +185,37 @@
             filter: drop-shadow(0px 0px 3px rgb(255, 88, 88));
             cursor: pointer;         
         }
+        .signUpTitle {
+            text-align: center;
+            font-weight: 900;
+            font-size: 25px;
+            font-family: 'PT Sans';
+            color: rgb(0, 0, 0);
+            margin-bottom: 5px;
+        }
+        .codeHolder {
+            width: 100%;
+            margin-top: 2px;
+            text-align: center;
+            font-weight: 900;
+            font-size: 17px;
+            color: rgb(0, 0, 0);
+        }
+        .inputFormHolder {
+            float: left;
+        }
+        .inputHolder {
+            width: 90%;
+            font-weight: 900;
+            font-size: 18px;
+            font-family: 'PT Sans';
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .inputRow {
+            width: 100%;
+        }
       
     </style>
   
@@ -234,29 +240,33 @@
             <div class="signUpTitle">
                 Sign Up
             </div>
-            <div class="inputHolder">
-                <label class="pure-material-textfield-outlined codeHolder">
-                  <input class="inputHolder" id="quizzCode" placeholder=" " type="email" required>
-                  <span>Email</span>
-                </label>
+            <div class="inputRow">
+                <div class="inputHolder">
+                    <label class="pure-material-textfield-outlined codeHolder">
+                      <input class="inputHolder" id="quizzCode" placeholder=" " type="email" required>
+                      <span>Email</span>
+                    </label>
+                </div>
+                <div class="inputHolder">
+                    <label class="pure-material-textfield-outlined codeHolder">
+                      <input class="inputHolder" id="quizzCode" placeholder=" " type="password" required>
+                      <span>Password</span>
+                    </label>
+                </div>                
             </div>
-            <div class="inputHolder">
-                <label class="pure-material-textfield-outlined codeHolder">
-                  <input class="inputHolder" id="quizzCode" placeholder=" " type="password" required>
-                  <span>Password</span>
-                </label>
-            </div>
-            <div class="inputHolder">
-                <label class="pure-material-textfield-outlined codeHolder">
-                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
-                  <span>Username</span>
-                </label>
-            </div>
-            <div class="inputHolder">
-                <label class="pure-material-textfield-outlined codeHolder">
-                  <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
-                  <span>University</span>
-                </label>
+            <div class="inputRow">
+                <div class="inputHolder">
+                    <label class="pure-material-textfield-outlined codeHolder">
+                      <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                      <span>Username</span>
+                    </label>
+                </div>
+                <div class="inputHolder">
+                    <label class="pure-material-textfield-outlined codeHolder">
+                      <input class="inputHolder" id="quizzCode" placeholder=" " type="text" required>
+                      <span>University</span>
+                    </label>
+                </div>
             </div>
             <div class="toolbarUserSessionSignUp">
                 Sign Up
