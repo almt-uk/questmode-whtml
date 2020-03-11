@@ -553,8 +553,13 @@
     quizzes.push(quizzGame);
     student.quizzes_played = quizzes;
     students.push(student);
+    students.push(student);
+    students.push(student);
+    students.push(student);
 
     addStudents();
+    // addStudents(1);
+    // addStudents(2);
     function addStudents()
     {
 
@@ -566,17 +571,17 @@
             divc.id = 'studentsHolder' + (studentsHolderPack.childElementCount + 1);
             totalQuestions = studentsHolderPack.childElementCount + 1;
             divc.setAttribute("studentID", totalQuestions);
-            divc.onclick = function () {
-                onClickStudents(divc.getAttribute('studentID'));
-            };
             var divc2 = document.createElement("div");
             divc2.classList.add("studentName");
             divc2.innerText = students[i].username;
             divc.append(divc2);
-            divc2 = document.createElement("div");
+            var divc2 = document.createElement("div");
             divc2.classList.add("classPeopleNo");
             divc2.innerText = "Exp: " + students[i].experience;
             divc.append(divc2);
+            divc.onclick = function () {
+                onClickStudents(divc.getAttribute('studentID'));
+            };
             studentsHolderPack
                 .append(divc);
         }
@@ -584,8 +589,8 @@
     }
     function onClickStudents(studentNo)
     {
-        console.log(studentNo - 1);
-        studentStats(studentNo);
+        console.log(studentNo-1);
+        studentStats(studentNo - 1);
     }
 
     var classStatsHolder = document.getElementById("classStatsHolder");
