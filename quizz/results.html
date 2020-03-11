@@ -237,7 +237,7 @@
 
         /* User Holder */
         .notLoggedIn {
-            margin-top: 10px;
+            margin-top: 20px;
         }
         .userSessionHolder {
             float: left;
@@ -245,9 +245,6 @@
         }
         .logInHolder, .signUpHolder {
             width: fit-content;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
             font-family: 'PT Sans';
             font-weight: 900;
             font-size: 20px;
@@ -261,9 +258,19 @@
             padding-right: 10px;
             border-radius: 5px;
         }
+        .logInHolder {
+            position: relative;
+            left: 70%;
+            transform: translateX(-50%);
+        }
+        .signUpHolder {
+            position: relative;
+            left: 30%;
+            transform: translateX(-50%);
+        }
         .logInHolder:hover {
             position: relative;
-            left: 50%;
+            left: 70%;
             transform: translateX(-50%) scale(0.9);
             cursor: pointer;
             -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.774));
@@ -272,12 +279,12 @@
         }
         .signUpHolder:hover {
             position: relative;
-            left: 50%;
+            left: 30%;
             transform: translateX(-50%) scale(0.9);
             cursor: pointer;
             -webkit-filter: drop-shadow(0px 0px 20px rgba(0, 0, 0, 0.774));
             filter: drop-shadow(0px 0px 20px #222);
-            background-color: #1f58047a;
+            background-color: #5804047a;
         }
       
     </style>
