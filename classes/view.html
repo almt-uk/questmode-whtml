@@ -490,7 +490,7 @@
                                 
                             </div>
                         </div>
-                        <div class="studentsStats">
+                        <div class="studentsStats" id="studentsStats">
                             <div class="barOutliner">
                                 <div class="barHolder" style='width:95%;'>
 
@@ -661,6 +661,7 @@
     {
         document.getElementById("studentSubtitle").innerText = students[studentId].email;
         document.getElementById("studentTitle").innerText = students[studentId].username + " (Exp: " + students[studentId].experience + ")";
+        var studentsStats = document.getElementById("studentsStats");
         if(!classStatsHolder.classList.contains("hideElement"))
         {
             classStatsHolder.classList.add("hideElement");
