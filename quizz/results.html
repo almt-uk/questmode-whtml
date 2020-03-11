@@ -146,22 +146,6 @@
             filter: drop-shadow(0px 0px 2px #222);
             letter-spacing: 0px;
         }
-        .gainExpHolder {
-            width: 47%;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
-            height: 40%;
-            margin-left: 3%;
-            background: linear-gradient(135deg, #bb09d3, #f07510);
-            background-size: 400% 400%;
-            -webkit-animation: gradientBG 6s ease infinite;
-            animation: gradientBG 6s ease infinite;
-            -webkit-filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.5));
-            filter: drop-shadow(0px 0px 10px #222);
-            float: left;
-            border-radius: 10px;
-        }
 
         @-webkit-keyframes gradientBG {
             0% {
@@ -210,6 +194,16 @@
             font-weight: 900;
             font-size: 34px;
             color: rgb(255, 255, 255);
+        }
+
+        .expGainedHolder {
+
+        }
+        .expGainedTitle {
+            text-align: center;
+        }
+        .expGainedContent {
+            text-align: center;
         }
       
     </style>
@@ -263,7 +257,12 @@
             </div>
             <div class="gainExpHolder resultFrame">
                 <div class="expGainedHolder">
-
+                    <div class="expGainedTitle">
+                        You have gained
+                    </div>
+                    <div class="expGainedContent">
+                        2918 EXP
+                    </div>
                 </div>
             </div>
         </div>
