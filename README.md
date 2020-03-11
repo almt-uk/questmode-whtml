@@ -6,6 +6,13 @@ https://almt-uk.github.io/questmode-whtml
 
 
 ## website content:
+*create quizz*
+https://almt-uk.github.io/questmode-whtml/quizz/create.html
+<br>
+*question*
+https://almt-uk.github.io/questmode-whtml/quizz/question.html
+<br>
+
 *index*
 https://almt-uk.github.io/questmode-whtml/index.html
 <br>
@@ -14,9 +21,6 @@ https://almt-uk.github.io/questmode-whtml/join_quizz.html
 <br>
 *waiting*
 https://almt-uk.github.io/questmode-whtml/quizz/waiting.html
-<br>
-*question*
-https://almt-uk.github.io/questmode-whtml/quizz/question.html
 <br>
 *pick_answer*
 https://almt-uk.github.io/questmode-whtml/quizz/pick_answer.html
@@ -35,9 +39,6 @@ https://almt-uk.github.io/questmode-whtml/classes/create.html
 <br>
 *view class*
 https://almt-uk.github.io/questmode-whtml/classes/view.html
-<br>
-*create quizz*
-https://almt-uk.github.io/questmode-whtml/quizz/create.html
 <br>
 *logged in home pafe*
 https://almt-uk.github.io/questmode-whtml/index2.html
