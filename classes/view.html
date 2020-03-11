@@ -268,7 +268,7 @@
         }
         .classDetails {
             width: fit-content;
-            position: fixed;
+            position: relative;
             left: 50%;
             transform: translateX(-50%);
         }
@@ -359,6 +359,11 @@
             -moz-box-shadow: inset 0 0 10px #00000083;
             -webkit-box-shadow: inset 0 0 10px #00000083;
             cursor: pointer;           
+        }
+        .studentsStats {
+            width: 100%;
+            height: 100px;
+            background-color: aqua;
         }
       
     </style>
@@ -464,6 +469,9 @@
                             <div class="classNoStudents" id="studentSubtitle">
                                 
                             </div>
+                        </div>
+                        <div class="studentsStats">
+
                         </div>
                     </div>
                     <div class="addStudentHolder hideElement" id="addStudentHolder">
