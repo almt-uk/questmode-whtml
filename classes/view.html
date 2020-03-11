@@ -441,126 +441,6 @@
                         <div class="studentsHolderPack" id="studentsHolderPack">
                             
                         </div>
-                        <div class="studentsHolder" onclick="studentStats(12)">
-                            <div class="studentName">
-                                Name 125235
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 34lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(24)">
-                            <div class="studentName">
-                                Name 125ssd
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 24lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(54)">
-                            <div class="studentName">
-                                Name 34654f
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 96lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(23)">
-                            <div class="studentName">
-                                Name 125235
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 34lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(32)">
-                            <div class="studentName">
-                                Name 125ssd
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 24lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(235)">
-                            <div class="studentName">
-                                Name 34654f
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 96lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 125235
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 34lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 125ssd
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 24lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 34654f
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 96lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 125235
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 34lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 125ssd
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 24lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 34654f
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 96lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 125235
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 34lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 125ssd
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 24lvl
-                            </div>
-                        </div>
-                        <div class="studentsHolder" onclick="studentStats(0)">
-                            <div class="studentName">
-                                Name 34654f
-                            </div>
-                            <div class="classPeopleNo">
-                                Exp: 96lvl
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -578,10 +458,10 @@
                     </div>
                     <div class="studentStatsHolder hideElement" id="studentStatsHolder">
                         <div class="classDetails">
-                            <div class="classTitle">
+                            <div class="classTitle" id="studentTitle">
                                 NAme 253657
                             </div>
-                            <div class="classNoStudents">
+                            <div class="classNoStudents" id="studentSubtitle">
                                 LVL 123
                             </div>
                         </div>
@@ -633,7 +513,7 @@
     var student = new Student;
     student.user_id = 13234325;
     student.experience = 1272;
-    student.username = "username312743";
+    student.username = "michael";
     student.email = "3126153@my.northampton.ac.uk";
     var quizzes = [];
     var quizzGame = new QuizzGame;
@@ -650,26 +530,62 @@
     quizzGame.total_answers = 13;
     quizzes.push(quizzGame);
     student.quizzes_played = quizzes;
+    students.push(student);
 
+    student = new Student;
+    student.user_id = 124342;
+    student.experience = 1242;
+    student.username = "teo";
+    student.email = "3126153@my.northampton.ac.uk";
+    var quizzes = [];
+    var quizzGame = new QuizzGame;
+    quizzGame.experience = 123;
+    quizzGame.answers_good = 6;
+    quizzGame.total_answers = 10;
+    quizzes.push(quizzGame);
+    quizzGame.experience = 242;
+    quizzGame.answers_good = 3;
+    quizzGame.total_answers = 13;
+    quizzes.push(quizzGame);
+    quizzGame.experience = 4563;
+    quizzGame.answers_good = 12;
+    quizzGame.total_answers = 13;
+    quizzes.push(quizzGame);
+    student.quizzes_played = quizzes;
+    students.push(student);
+
+    addStudents();
     function addStudents()
     {
 
-        var questionItemsHolder = document.getElementById("questionItemsHolder");
-        var divc = document.createElement("div");
-        divc.classList.add("questionItemHolder");
-        divc.id = 'questionItemHolder' + (questionItemsHolder.childElementCount + 1);
-        totalQuestions = questionItemsHolder.childElementCount + 1;
-        divc.setAttribute("questionID", totalQuestions);
-        divc.onclick = function () {
-            manageQuestion(divc.getAttribute('questionID'));
-        };
-        var divc2 = document.createElement("div");
-        divc2.classList.add("questionContent");
-        divc2.innerText = "Question";
-        divc.append(divc2);
-        questionItemsHolder
-            .append(divc);
-        manageQuestion(totalQuestions)
+        for(var i=0; i<students.length; i++)
+        {
+            var studentsHolderPack = document.getElementById("studentsHolderPack");
+            var divc = document.createElement("div");
+            divc.classList.add("studentsHolder");
+            divc.id = 'studentsHolder' + (studentsHolderPack.childElementCount + 1);
+            totalQuestions = studentsHolderPack.childElementCount + 1;
+            divc.setAttribute("studentID", totalQuestions);
+            divc.onclick = function () {
+                onClickStudents(divc.getAttribute('studentID'));
+            };
+            var divc2 = document.createElement("div");
+            divc2.classList.add("studentName");
+            divc2.innerText = students[i].username;
+            divc.append(divc2);
+            divc2 = document.createElement("div");
+            divc2.classList.add("classPeopleNo");
+            divc2.innerText = "Exp: " + students[i].experience;
+            divc.append(divc2);
+            studentsHolderPack
+                .append(divc);
+        }
+        
+    }
+    function onClickStudents(studentNo)
+    {
+        console.log(studentNo - 1);
+        studentStats(studentNo);
     }
 
     var classStatsHolder = document.getElementById("classStatsHolder");
@@ -690,8 +606,10 @@
             studentStatsHolder.classList.add("hideElement");
         }
     }
-    function studentStats(studentId = 0)
+    function studentStats(studentId)
     {
+        document.getElementById("studentTitle").innerText = students[studentId].email;
+        document.getElementById("studentSubtitle").innerText = students[studentId].username;
         if(!classStatsHolder.classList.contains("hideElement"))
         {
             classStatsHolder.classList.add("hideElement");
