@@ -367,6 +367,7 @@
             padding-right: 50px;
         }
         .barOutliner {
+            margin-top: 10px;
             width: 70%;
             height: 40px;
             border-radius: 10px;
@@ -491,11 +492,7 @@
                             </div>
                         </div>
                         <div class="studentsStats" id="studentsStats">
-                            <div class="barOutliner">
-                                <div class="barHolder" style='width:95%;'>
-
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                     <div class="addStudentHolder hideElement" id="addStudentHolder">
@@ -661,8 +658,21 @@
         document.getElementById("studentSubtitle").innerText = students[studentId].email;
         document.getElementById("studentTitle").innerText = students[studentId].username + " (Exp: " + students[studentId].experience + ")";
         var studentsStats = document.getElementById("studentsStats");
+        if(studentsStats.childElementCount > 0)
+        {
+            
+        }
         students[studentId].quizzes_played.forEach(quizz => {
-            console.log(quizz.answers_good);
+            var divc = document.createElement("div");
+            divc.classList.add("barOutliner");
+            divc.id = 'barOutliner' + (studentsStats.childElementCount + 1);
+            divc.setAttribute("barOutliner", (studentsStats.childElementCount + 1));
+            var divc2 = document.createElement("div");
+            divc2.classList.add("barHolder");
+            divc2.style.width = quizz.answers_good * 100 / quizz.total_answers;
+            divc.append(divc2);
+            studentsStats
+                .append(divc);
         });
         if(!classStatsHolder.classList.contains("hideElement"))
         {
